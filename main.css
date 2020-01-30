@@ -17,7 +17,9 @@ body, html {
 .bgimg-1 {
   background-image: url('./Photo/team.png');
   min-height: 100%;
+  
   opacity: 100%;
+  animation: opac 1s ease-in;
 }
 
 /* Second image (Portfolio) */
@@ -46,6 +48,9 @@ body, html {
 
 
 .logo-black-bears{
-  width:400px;
-  height:300px;
+  /* width:400px;
+  height:300px; */
+  opacity: 100%;
+  animation: opac 5s;
+
 }
