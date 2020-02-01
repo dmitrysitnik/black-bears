@@ -30,8 +30,8 @@ body, html {
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url("/w3images/parallax3.jpg");
-  min-height: 400px;
+  background-image: url("./Photo/contacts-block.jpg");
+  min-height: 300px;
 }
 
 .w3-wide {letter-spacing: 10px;}
@@ -53,4 +53,11 @@ body, html {
   opacity: 100%;
   animation: opac 5s;
 
+}
+
+.logo-restriction{
+  max-width: 120px;
+  max-height: 120px;
+  min-width: 120px;
+  min-height: 120px;
 }
