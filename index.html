@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <link rel="stylesheet" href="main.css">
 
 <body>
@@ -36,10 +38,10 @@
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container w3-animate-opacity" id="home">
+<div class="bgimg-1 w3-display-container w3-animate-opacity"  id="home">
 </div>
 <div class="w3-display-middle" style="white-space:nowrap;">
-  <div class="w3-center">
+  <div class="w3-center " data-aos="flip-left">
     <img class="logo-black-bears" src="Photo/Additional/ЧМ лого с обводкой.pdf">
     <div>
       <!-- <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">
@@ -50,7 +52,7 @@
   
 </div>
 
-<div class="w3-row w3-center w3-white w3-padding-16">
+<div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up"> 
   <div class="w3-quarter w3-section ">
     <img  class="logo-restriction" src="./Photo/Additional/Политех полный лого.png">
   </div>
@@ -67,7 +69,7 @@
 
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
+<div class="w3-content w3-container w3-padding-64 " id="about" data-aos="fade-up">
   <h3 class="w3-center">О КОМАНДЕ</h3>
   <!-- <p class="w3-center"></p> -->
   <p>"Черные Медведи - Политех" в сезоне 2019-2020 дебютирует в Суперлиге-1. Команда преимущественно составлена из студентов СПБПУ, экс-игроков Ассоциации 
@@ -91,15 +93,17 @@
         
     </div>
   </div>
+
+</div>
+<div class="w3-row w3-content w3-padding-32" data-aos="fade-right">
   <p class="w3-large w3-center w3-padding-16">Завершение сезона:</p>
   <p class="w3-wide w3-center"><i class="fa"></i> Чемпионат России</p>
   <div class="w3-light-grey">
     <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:50%">50%</div>
   </div> 
-
 </div>
 
-<div class="w3-row w3-center w3-black w3-padding-16">
+<div class="w3-row w3-center w3-black w3-padding-16" data-aos="fade-right">
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">2Х</span><br>
     Чемпионы АСБ
@@ -126,7 +130,7 @@
 </div>
 
 <!-- Container (Portfolio Section) -->
-<div class="w3-content w3-container w3-padding-64" id="portfolio">
+<div class="w3-content w3-container w3-padding-64" data-aos="fade-up" id="portfolio">
   <h3 class="w3-center">МЕДИА</h3>
   <p class="w3-center"><em>Фотографии с мероприятий.<br> (нажмите чтобы увеличить)</em></p><br>
 
@@ -186,7 +190,7 @@
 </div>
 
 <!-- Container (Contact Section) -->
-<div class="w3-content w3-container w3-padding-64" id="contact">
+<div class="w3-content w3-container w3-padding-64" data-aos="fade-up" id="contact">
   <h3 class="w3-center">КОНТАКТЫ</h3>
   <p class="w3-center"><em>Связаться с нами можно следующи способами:</em></p>
 
@@ -263,6 +267,19 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+</script>
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>   
+  AOS.init({
+   easing: 'ease-out-back',
+   duration: 800,
+   delay: 500,
+   once: true,
+   disable: 'mobile'
+});
 </script>
 
 </body>
