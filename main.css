@@ -61,3 +61,8 @@ body, html {
   min-width: 120px;
   min-height: 120px;
 }
+
+
+.no-opacity{
+  opacity: 100%;
+}
