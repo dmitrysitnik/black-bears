@@ -19,7 +19,7 @@ body, html {
   min-height: 100%;
   
   opacity: 100%;
-  animation: opac 1s ease-in;
+  /* animation: opac 1s ease-in; */
 }
 
 /* Second image (Portfolio) */
@@ -52,6 +52,8 @@ body, html {
   height:300px; */
   opacity: 100%;
   animation: opac 5s;
+  width: 50%;
+  height: 50%;
 
 }
 
