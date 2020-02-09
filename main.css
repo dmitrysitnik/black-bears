@@ -68,3 +68,9 @@ body, html {
 .no-opacity{
   opacity: 100%;
 }
+
+
+#vk_groups,
+#vk_groups iframe {
+     width: 100%;
+}
