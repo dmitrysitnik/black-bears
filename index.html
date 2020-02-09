@@ -49,8 +49,10 @@
       </span> -->
     </div>
   </div>
-  
-</div>
+
+  <!-- VK Widget -->
+<div id="vk_groups"></div> </div>
+
 
 <div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up"> 
   <div class="w3-quarter w3-section ">
@@ -281,6 +283,13 @@ function toggleFunction() {
    disable: 'mobile'
 });
 </script>
+
+
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+
+<script type="text/javascript">
+  VK.Widgets.Group("vk_groups", {mode: 4, wide: 1, no_cover: 1, height: 1, color3: 'BBCDCF'}, 76018378);
+  </script>
 
 </body>
 </html>
