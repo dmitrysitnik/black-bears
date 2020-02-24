@@ -49,7 +49,18 @@ body, html {
   }
 }
 
+.my-menu{
+  list-style: none;
+}
 
+
+.my-menu li {
+  display: inline;
+}
+
+.sub-menu{
+  display: none;
+}
 
 .logo-black-bears{
   /* width:400px;
