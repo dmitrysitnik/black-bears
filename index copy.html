@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+
+  <div class="topnav w3-bar" id="myTopnav">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+    <div class="dropdown">
+      <button class="dropbtn">Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+    <a href="#home" class="w3-button">HOME</a>
+
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fa fa-user"></i> О КОМАНДЕ
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">ОСНОВНАЯ КОМАНДА</a>
+        <a href="#">СТУДЕНЧЕСКАЯ КОМАНДА</a>
+      </div>
+    </div>
+
+
+    <a href="#portfolio" class="w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
+    <a href="#contact" class="w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+    <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  </div>
+
+  <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  </div>
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <div class="w3-center " data-aos="flip-left">
+      <img class="logo-black-bears" src="Photo/logo/black-bears-logo.png">
+      <div>
+        <!-- <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide">
+        BLACK BEARS
+      </span> -->
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up">
+    <div class="w3-quarter w3-section ">
+      <img class="logo-restriction" src="./Photo/Additional/Политех полный лого.png">
+    </div>
+    <div class="w3-quarter w3-section">
+      <img class="logo-restriction" src="Photo/Additional/РФБ лого.png">
+    </div>
+    <div class="w3-quarter w3-section">
+      <img class="logo-restriction" src="Photo/Additional/Logo_FBP.png">
+    </div>
+    <div class="w3-quarter w3-section logo-restrictions">
+      <img class="logo-restriction" src="./Photo/Additional/asb-vk-logo.jpg">
+    </div>
+  </div>
+
+  <div class="w3-row w3-light-grey">
+    <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
+      <!-- VK Widget -->
+      <div id="vk_groups"></div>
+    </div>
+  </div>
+
+  <!-- Container (About Section) -->
+  <div class="w3-content w3-container w3-padding-64 " id="about" data-aos="fade-up">
+    <h3 class="w3-center">О КОМАНДЕ</h3>
+    <!-- <p class="w3-center"></p> -->
+    <p>"Черные Медведи - Политех" в сезоне 2019-2020 дебютирует в Суперлиге-1. Команда преимущественно составлена из
+      студентов СПБПУ, экс-игроков Ассоциации
+      студенческого баскетбола (АСБ), чемпионат которой "Политех" выиграл в 2018 году</p>
+    <div class="w3-row">
+      <div class="w3-col m6 w3-center w3-padding-large">
+        <!-- <p><b><i class="fa fa-user w3-margin-right "></i>Черные медведи</b></p><br> -->
+        <img src="./Photo/Additional/photo-about-team.jpg"
+          class="w3-round w3-image w3-hover-opacity-off w3-animate-opacity" alt="Blood, sweat and tears" width="700"
+          height="533">
+      </div>
+
+      <!-- Hide this text on small devices -->
+      <div class="w3-col m6 w3-hide-small w3-padding-large">
+        <p><b>ЖБК Чёрные Медведи-Политех:</b>
+          <br />Профессиональная женская баскетбольная команда
+          <br />Год основания: 2013
+          <br />
+          <br />Лига:
+          <br />Сезон 2018/2019 - РФБ/Суперлига 2
+          <br />Сезон 2019/2020 - РФБ/Суперлига 1
+          <br />Главный тренер: Данилов Виктор Андреевич</p>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="w3-row w3-content w3-padding-32" data-aos="fade-right">
+    <p class="w3-large w3-center w3-padding-16">Завершение сезона:</p>
+    <p class="w3-wide w3-center"><i class="fa"></i> Чемпионат России</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:50%">50%</div>
+    </div>
+  </div>
+
+  <div class="w3-row w3-center w3-black w3-padding-16" data-aos="fade-right">
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">2Х</span><br>
+      ЧЕМПИОНЫ АСБ
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">10Х</span><br>
+      УЧАСТНИКИ ФИНАЛА 4-х АСБ
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">3Х</span><br>
+      УЧАСТНИК ТУРНИРА ЕВРОПЕЙСКИХ ИГР
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">2Х</span><br>
+      ФИНАЛИСТЫ КУБКА РОССИИ
+    </div>
+  </div>
+
+  <!-- Second Parallax Image with Portfolio Text -->
+  <div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-white w3-text-black w3-wide"></span>
+    </div>
+  </div>
+
+  <!-- Container (Portfolio Section) -->
+  <div class="w3-content w3-container w3-padding-64" data-aos="fade-up" id="portfolio">
+    <h3 class="w3-center">МЕДИА</h3>
+    <p class="w3-center"><em>Фотографии с мероприятий.<br> (нажмите чтобы увеличить)</em></p><br>
+
+    <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+    <div class="w3-row-padding w3-center">
+      <div class="w3-col m3">
+        <img src="./Photo/media1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+    </div>
+
+    <div class="w3-row-padding w3-center w3-section">
+      <div class="w3-col m3">
+        <img src="./Photo/media5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+
+      <div class="w3-col m3">
+        <img src="./Photo/media11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
+      </div>
+      <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">ЗАГРУЗИТЬ ЕЩЕ</button>
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
+        class="fa fa-remove"></i></span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption" class="w3-opacity w3-large"></p>
+    </div>
+  </div>
+
+  <!-- Third Parallax Image with Portfolio Text -->
+  <div class="bgimg-3 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <!-- <span class="w3-xxlarge w3-black w3-text-white">КОНТАКТЫ</span> -->
+    </div>
+  </div>
+
+  <!-- Container (Contact Section) -->
+  <div class="w3-content w3-container w3-padding-64" data-aos="fade-up" id="contact">
+    <h3 class="w3-center">КОНТАКТЫ</h3>
+    <p class="w3-center"><em>Связаться с нами можно следующи способами:</em></p>
+
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="./Photo/test-map.png" class="w3-image w3-round" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Санкт-Петербург<br>
+          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +7 (800) 800-80-80<br>
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
+        </div>
+        <p>Мы всегда готовы оказать вам помощь и рассмотреть ваши пожелания и предложения в сфере маркетинга, СМИ или
+          технической составляющей работы сайта.</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Имя" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Сообщение" required name="Message">
+          <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> ОТПРАВИТЬ СООБЩЕНИЕ
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Наверх</a>
+    <div class="w3-xlarge w3-section">
+      <a href="https://vk.com/blackbearspolytech" target="_blank">
+        <i class="fa fa-envelope w3-hover-opacity"></i>
+      </a>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </footer>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    AOS.init({
+      easing: 'ease-out-back',
+      duration: 800,
+      delay: 200,
+      once: false,
+      disable: 'mobile'
+    });
+  </script>
+
+  <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+  <script type="text/javascript">
+    VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", no_cover: 1, height: "700" }, 76018378);
+  </script>
+
+
+</body>
+
+</html>
