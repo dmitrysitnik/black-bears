@@ -19,7 +19,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('../Photo/team.png');
+  /* background-image: url('../Photo/team.png'); */
   min-height: 100%;
   
   opacity: 100%;
@@ -155,4 +155,14 @@ body, html {
 .logo-black-bears{
   width: 50%;
   height: 50%;
+}
+
+.logo-restriction{
+  width: 100px;
+  height: 100px;
+}
+
+.bold{
+  font-weight: bold;
+  font-size: 30px;
 }

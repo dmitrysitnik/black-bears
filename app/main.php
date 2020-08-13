@@ -1,37 +1,56 @@
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64 " id="about" data-aos="fade-up">
-    <h3 class="w3-center">О КОМАНДЕ</h3>
-    <!-- <p class="w3-center"></p> -->
-    <p>
-      2013/2014 – Создание команды.
-      Три ключевые личности: Самвел Аветисян – основатель клуба.
-      Егор Радченко – его правая рука. Ольга Черкасова – создатель команды, её игрок и менеджер.
-      Итоговое второе место в третьем дивизионе Чемпионата Санкт-Петербурга среди студентов.
-      Выход во второй Дивизион.
-    </p>
-    <p>
-      2014/2015 – Сильное усиление команды.
-      Победа во втором дивизионе Чемпионата Санкт-Петербурга среди студентов без поражений за сезон.
-      Первое участие в любительском Чемпионате Санкт-Петербурга. Выход в высший дивизион.
-    </p>
-    <div class="w3-row">
-      <div class="w3-col m6 w3-center w3-padding-large">
-        <!-- <p><b><i class="fa fa-user w3-margin-right "></i>Черные медведи</b></p><br> -->
-        <img src="Photo/Additional/Photo-about-team.jpg"
-          class="w3-round w3-image w3-hover-opacity-off w3-animate-opacity" alt="Blood, sweat and tears" width="700"
-          height="533">
-      </div>
-
-      <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-hide-small w3-padding-large">
-        <p><b>ЖБК Чёрные Медведи-Политех:</b>
-          <br />Профессиональная женская баскетбольная команда
-          <br />Год основания: 2013
-          <br />
-          <br />Лига:
-          <br />Сезон 2018/2019 - РФБ/Суперлига 2
-          <br />Сезон 2019/2020 - РФБ/Суперлига 1
-          <br />Главный тренер: Данилов Виктор Андреевич</p>
-
-      </div>
+<!-- The start page -->
+<div class="bgimg-1 w3-display-container w3-white" id="home">
+  </div>
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <div class="w3-center " data-aos="flip-left">
+      <img class="logo-black-bears" src="../app/Photo/logo/black-bears-logo.png">
     </div>
+
+  </div>
+</div>
+
+<div class="w3-row w3-light-grey">
+    <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
+      <!-- VK Widget -->
+      <div id="vk_groups"></div>
+    </div>
+</div>
+
+
+<div class="w3-row w3-black">
+ <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
+  <iframe width="800" height="450" src="https://www.youtube.com/embed/6q_dJpGyFcE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+</div>
+
+
+<!-- Parallax Image with Portfolio Text -->
+<div class="bgimg-2 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <!-- <span class="w3-xxlarge w3-black w3-text-white">КОНТАКТЫ</span> -->
+    </div>
+  </div>
+
+  <div class="w3-row w3-center w3-black w3-padding-16" data-aos="fade-right">
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">1Х</span><br>
+      Серебряные призеры Суперлиги-2 Чемпионата России
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">2Х</span><br>
+      Чемпионы России среди студентов
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">3Х</span><br>
+      Чемпионы Высшего дивизиона «Санкт-Петербург» среди студентов
+    </div>
+    <div class="w3-quarter w3-section">
+      <span class="w3-xlarge">1Х</span><br>
+      Чемпионы Студенческой Суперлиги среди студентов
+    </div>
+
+    <div class="w3-row w3-center">
+     <a href="#" class="w3-button w3-section w3-light-grey">Все достижения</a>
+    </div>
+    
+  </div>
