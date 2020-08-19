@@ -9,7 +9,9 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="../app/style/main.css">
-
+  
+  
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -71,6 +73,8 @@ if (!isset($page)) {
     
   </div>
 
+ 
+
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Наверх</a>
@@ -114,6 +118,31 @@ if (!isset($page)) {
     VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", no_cover: 1, height: "700" }, 76018378);
   </script>
 
+<script>
+    var app = new Vue({
+      el: '#robin-table',
+      data: {
+        message: '<h3>Hello Vue!</h3>',
+        info: {}
+      },
+
+      created() {
+        this.fetchInfo();
+      },
+
+      methods: {
+        fetchInfo(){
+          axios
+          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=json')
+        .then(response => (this.info = response.data))
+        .catch(e => { this.errors.push(e) })
+
+          let test = this.info;
+          console.log(test);
+        }
+      }
+    })
+  </script>
 
 </body>
 

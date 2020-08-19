@@ -1,3 +1,5 @@
+<script src="https://unpkg.com/vue"></script>
+
 <!-- The start page -->
 <div class="bgimg-1 w3-display-container w3-white" id="home">
   </div>
@@ -14,6 +16,25 @@
       <!-- VK Widget -->
       <div id="vk_groups"></div>
     </div>
+</div>
+
+<div class="w3-display-container w3-light-grey">
+    <div class="w3-content w3-container w3-center">
+      <h3>СУПЕРЛИГА-1</h3>
+      <div id="robin-table" class="w3-content w3-container w3-center">
+          <div v-html="info"></div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<div class=”RoundRobin” data-id=”1” data-src="">
+</div>
+
+<div class="w3-display-container w3-light-grey">
+  <div class="w3-content w3-container w3-center"><h3>МАТЧИ</h3></div>
 </div>
 
 
@@ -52,5 +73,5 @@
     <div class="w3-row w3-center">
      <a href="#" class="w3-button w3-section w3-light-grey">Все достижения</a>
     </div>
-    
+
   </div>
