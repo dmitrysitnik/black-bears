@@ -27,15 +27,9 @@
     </div>
 </div>
 
-
-
-
-<div class=”RoundRobin” data-id=”1” data-src="">
-</div>
-
-<div class="w3-display-container w3-light-grey">
+<!-- <div class="w3-display-container w3-light-grey">
   <div class="w3-content w3-container w3-center"><h3>МАТЧИ</h3></div>
-</div>
+</div> -->
 
 
 <div class="w3-row w3-black">

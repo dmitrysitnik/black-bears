@@ -123,22 +123,34 @@ if (!isset($page)) {
       el: '#robin-table',
       data: {
         message: '<h3>Hello Vue!</h3>',
-        info: {}
+        info: {},
+        matches:{}
       },
 
       created() {
         this.fetchInfo();
       },
 
+      updated(){
+        let test = this.info;
+          console.log(test);
+          this.AddRoundRobinClass();
+      },
+
       methods: {
         fetchInfo(){
           axios
-          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=json')
+          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=html')
         .then(response => (this.info = response.data))
         .catch(e => { this.errors.push(e) })
 
-          let test = this.info;
-          console.log(test);
+        axios
+        .get('http://org.infobasket.ru/Widget/TeamGames/100142?&compId=33259&gameLink=*&format=html')
+        .then(response => (this.matches = response.data))
+        .catch(e => { this.error.push(e) })
+        },
+        AddRoundRobinClass(){
+          document.getElementsByClassName('round-robin')[0].className += " w3-table w3-striped w3-bordered";
         }
       }
     })
