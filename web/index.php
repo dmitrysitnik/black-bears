@@ -9,8 +9,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <link rel="stylesheet" href="../app/style/main.css">
-  
-  
+
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
@@ -145,7 +144,7 @@ if (!isset($page)) {
         .catch(e => { this.errors.push(e) })
 
         axios
-        .get('http://org.infobasket.ru/Widget/TeamGames/100142?&compId=33259&gameLink=*&format=html')
+        .get('https://org.infobasket.ru/Widget/CalendarCarousel/33259?&max=50&format=json')
         .then(response => (this.matches = response.data))
         .catch(e => { this.error.push(e) })
         },

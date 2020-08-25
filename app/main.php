@@ -23,9 +23,30 @@
       <h3>СУПЕРЛИГА-1</h3>
       <div id="robin-table" class="w3-content w3-container w3-center">
           <div v-html="info"></div>
+          <div>
+          <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142" class="w3-card w3-margin-16"> 
+           <div>{{ item.LeagueNameRu }}</div>
+           <div>{{  item.CompNameRu }}</div>
+           <div>{{  item.DisplayDateTimeLocal }}</div>
+           <div class="w3-row w3-center">
+            <div class="w3-cell">
+              <img v-bind:src="item.TeamLogoA" class="carousel-logo"/> 
+              
+             </div>
+             <div class="w3-cell">
+               <img v-bind:src="item.TeamLogoB" class="carousel-logo"/>
+              </div> 
+              <div>{{ item.ShortTeamNameAru }} ({{ item.RegionTeamNameAru }}) - {{ item.ShortTeamNameBru }} ({{ item.RegionTeamNameBru}}) </div>
+              <div>{{ item.ScoreA }} : {{ item.ScoreB }}</div>
+           </div>
+          <div>
+          </div>
       </div>
     </div>
 </div>
+</div>
+</div>
+
 
 <!-- <div class="w3-display-container w3-light-grey">
   <div class="w3-content w3-container w3-center"><h3>МАТЧИ</h3></div>
