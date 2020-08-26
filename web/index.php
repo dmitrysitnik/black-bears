@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <link rel="stylesheet" href="../app/style/main.css">
-
+  <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
@@ -51,7 +50,7 @@ if (!isset($page)) {
 } elseif ($page == 'student-team') {
     require '../app/student-team.php';
 } elseif ($page == 'history') {
-  require '../app/history.php';
+    require '../app/history.php';
 }
 
 ?>
@@ -69,10 +68,10 @@ if (!isset($page)) {
     <div class="w3-quarter w3-section logo-restrictions">
       <img class="logo-restriction" src="../app/Photo/Additional/asb-vk-logo.jpg">
     </div>
-    
+
   </div>
 
- 
+
 
   <!-- Footer -->
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
@@ -123,7 +122,9 @@ if (!isset($page)) {
       data: {
         message: '<h3>Hello Vue!</h3>',
         info: {},
-        matches:{}
+        matches:{},
+        cards:[],
+        currentCarouselCard: 0
       },
 
       created() {
@@ -131,9 +132,9 @@ if (!isset($page)) {
       },
 
       updated(){
-        let test = this.info;
-          console.log(test);
           this.AddRoundRobinClass();
+          this.GetAllCarouselCards();
+          this.HideCards();
       },
 
       methods: {
@@ -148,13 +149,59 @@ if (!isset($page)) {
         .then(response => (this.matches = response.data))
         .catch(e => { this.error.push(e) })
         },
+
         AddRoundRobinClass(){
           document.getElementsByClassName('round-robin')[0].className += " w3-table w3-striped w3-bordered";
+        },
+
+        GetAllCarouselCards(){
+          this.cards = document.getElementsByClassName('carousel-card');
+        },
+
+        HideCards(){
+          for( let index = 1; index <= this.cards.length; index++){
+            // document.getElementsByClassName('carousel-card')[index].className += " card-hide";
+            this.cards[index].className += " card-hide";
+          }
+          this.currentCarouselCard = 0;
+        },
+        FakeScroll(){
+          window.scrollBy(0,1);
+          window.scrollBy(0,-1);
+        },
+
+        CarouselMove(step){
+
+          let newCard = 0;
+          let Moved = false;
+
+          if(step === -1){
+
+            if (this.currentCarouselCard < this.cards.length - 1){
+              newCard = this.currentCarouselCard + 1;
+              Moved = true;
+            }
+
+          } else if(step === 1){
+
+            if(this.currentCarouselCard > 0){
+              newCard = this.currentCarouselCard - 1;
+              Moved = true;
+            }
+          }
+
+          if(Moved){
+           //Текущую карточку из карусели необходимо спрятать
+           this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide"; 
+           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container";
+           this.FakeScroll();
+           this.currentCarouselCard = newCard;
+          }
+          
         }
       }
     })
   </script>
-
 </body>
 
 </html>
