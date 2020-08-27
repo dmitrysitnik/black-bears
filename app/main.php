@@ -18,13 +18,43 @@
   </div>
 </div>
 
-<div class="w3-display-container w3-light-grey">
+<div class="w3-display-container w3-light-grey" data-aos="fade-up">
   <div class="w3-content w3-container w3-center">
     <h3>СУПЕРЛИГА-1</h3>
     <div id="robin-table" class="w3-content w3-container w3-center">
-      <div v-html="info"></div>
-      <div class="w3-margin-top">
-        <h3>МАТЧИ КОМАНДЫ</h3>
+      <table class="w3-table w3-striped w3-bordered w3-centered">
+        <tr>
+          <td>Позиция</td>
+          <td></td>
+          <td>Команда</td>
+          <td>Игры</td>
+          <td>Победы</td>
+          <td>Поражения</td>
+          <td>Очки</td>
+          <td>Процент побед</td>
+        </tr>
+        <tr v-for="(team, index) in positions" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamPlace }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID)" class="table-logo"/></td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamName.CompTeamShortNameRu }} </td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingGame }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingWin }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingLose }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingPoints }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].VictoryPercent }}%</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="w3-display-container w3-light-grey">
+  <div class="w3-content w3-container w3-center">
+    <div class="w3-margin-top" data-aos="fade-up">
+      <h3>МАТЧИ КОМАНДЫ</h3>
+      <div id="matches">
         <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142"
           class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
           <div class="w3-col s4 w3-center">
@@ -32,11 +62,17 @@
             <img v-bind:src="item.TeamLogoA" class="carousel-logo" />
           </div>
           <div class="w3-col s4 w3-center">
-            <div><h4>{{ item.LeagueNameRu }}</h4></div>
+            <div>
+              <h4>{{ item.LeagueNameRu }}</h4>
+            </div>
             <div>{{ item.CompNameRu }}</div>
             <div>{{ item.DisplayDateTimeMsk }}</div>
-            <div><h5>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h5></div>
-            <div><h3>{{ item.ScoreA }} : {{ item.ScoreB }}</h3></div>
+            <div>
+              <h5>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h5>
+            </div>
+            <div>
+              <h3>{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
+            </div>
           </div>
           <div class="w3-col s4 w3-center">
             <img v-bind:src="item.TeamLogoB" class="carousel-logo" />
@@ -45,15 +81,10 @@
           <div>
           </div>
         </div>
-        <!-- Next and previous buttons -->
-        
-        
       </div>
     </div>
   </div>
 </div>
-
-<br>
 
 <!-- The dots/circles -->
 <!-- <div style="text-align:center">

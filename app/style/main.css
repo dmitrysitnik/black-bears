@@ -353,3 +353,22 @@ body, html {
   display: block;
 }
 
+.table-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.vertical {
+  vertical-align: middle;
+}
+
+.bbline {
+  background-color: darkslategrey;
+  color: white;
+}
+
+
+.history-text {
+  font-size: 20px;
+}
+

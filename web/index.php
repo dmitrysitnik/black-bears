@@ -104,8 +104,8 @@ if (!isset($page)) {
   <script>
     AOS.init({
       easing: 'ease-out-back',
-      duration: 1000,
-      delay: 400,
+      duration: 700,
+      delay: 300,
       once: false,
       disable: 'mobile'
     });
@@ -124,6 +124,78 @@ if (!isset($page)) {
         info: {},
         matches:{},
         cards:[],
+        currentCarouselCard: 0,
+        positions:{},
+        logo: "",
+        errors:[]
+      },
+
+      created() {
+        this.fetchInfo();
+      },
+
+      updated(){
+          // this.AddRoundRobinClass();
+          // this.positions = {};
+          this.AddLogoData();
+          
+      },
+
+      methods: {
+        fetchInfo(){
+          axios
+          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=json')
+        .then(response => (this.positions = response.data))
+        .catch(e => { this.errors.push(e) })
+        
+        },
+
+        AddRoundRobinClass(){
+          document.getElementsByClassName('round-robin')[0].className += " w3-table w3-striped w3-bordered";
+        },
+
+        GetTeamLogoSource(teamId){
+          console.log(teamId);
+          let logoSource = "";
+
+          logoSource = "http://org.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
+          return logoSource;
+        },  
+
+        AddLogoData(){
+          
+          console.log(this.positions);
+          let pos = this.positions;
+          pos.forEach(el => {
+            el.logo = this.GetTeamLogoSource(el.CompTeamName.TeamID);
+            console.log(el.logo);
+          });
+
+          this.positions = pos; 
+
+        },
+
+        IsBlackBears(team){
+
+          if(team === 100142){
+            return true;
+          }
+          else {
+            return false;
+          }
+        }
+
+        
+        }
+      
+    })
+  </script>
+  <script>
+    var matches = new Vue({
+      el: '#matches',
+      data: {
+        matches:{},
+        cards:[],
         currentCarouselCard: 0
       },
 
@@ -132,26 +204,17 @@ if (!isset($page)) {
       },
 
       updated(){
-          this.AddRoundRobinClass();
           this.GetAllCarouselCards();
           this.HideCards();
       },
 
       methods: {
         fetchInfo(){
-          axios
-          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=html')
-        .then(response => (this.info = response.data))
-        .catch(e => { this.errors.push(e) })
 
         axios
         .get('https://org.infobasket.ru/Widget/CalendarCarousel/33259?&max=50&format=json')
         .then(response => (this.matches = response.data))
         .catch(e => { this.error.push(e) })
-        },
-
-        AddRoundRobinClass(){
-          document.getElementsByClassName('round-robin')[0].className += " w3-table w3-striped w3-bordered";
         },
 
         GetAllCarouselCards(){
@@ -165,6 +228,7 @@ if (!isset($page)) {
           }
           this.currentCarouselCard = 0;
         },
+
         FakeScroll(){
           window.scrollBy(0,1);
           window.scrollBy(0,-1);
@@ -201,7 +265,7 @@ if (!isset($page)) {
         }
       }
     })
-  </script>
+    </script>
 </body>
 
 </html>
