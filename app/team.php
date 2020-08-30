@@ -1,39 +1,83 @@
-<!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64 " id="about" data-aos="fade-up">
-    <h3 class="w3-center">О КОМАНДЕ</h3>
-    <!-- <p class="w3-center"></p> -->
-    <p>
-      <b>2013/2014</b> – Создание команды.
-      Три ключевые личности: Самвел Аветисян – основатель клуба.
-      Егор Радченко – его правая рука. Ольга Черкасова – создатель команды, её игрок и менеджер.
-      Итоговое второе место в третьем дивизионе Чемпионата Санкт-Петербурга среди студентов.
-      Выход во второй Дивизион.
-    </p>
-    <p>
-      2014/2015 – Сильное усиление команды.
-      Победа во втором дивизионе Чемпионата Санкт-Петербурга среди студентов без поражений за сезон.
-      Первое участие в любительском Чемпионате Санкт-Петербурга. Выход в высший дивизион.
-    </p>
-    <div class="w3-row">
-      <div class="w3-col m6 w3-center w3-padding-large">
-        <!-- <p><b><i class="fa fa-user w3-margin-right "></i>Черные медведи</b></p><br> -->
-        <img src="../app/Photo/Additional/Photo-about-team.jpg"
-          class="w3-round w3-image w3-hover-opacity-off w3-animate-opacity" alt="Blood, sweat and tears" width="700"
-          height="533">
-      </div>
+<div class="w3-display-container w3-light-grey">
+  <div class="w3-content w3-container w3-center ">
+    <div class="w3-margin-top" data-aos="fade-up">
+      <h1>Состав команды</h1>
+      <div id="mainsquad">
+        <!-- Игроки -->
+        <div v-for="(item, index) in squad.Players"
+          class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
 
-      <!-- Hide this text on small devices -->
-      <div class="w3-col m6 w3-hide-small w3-padding-large">
-        <p><b>ЖБК Чёрные Медведи-Политех:</b>
-          <br />Профессиональная женская баскетбольная команда
-          <br />Год основания: 2013
-          <br />
-          <br />Лига:
-          <br />Сезон 2018/2019 - РФБ/Суперлига 2
-          <br />Сезон 2019/2020 - РФБ/Суперлига 1
-          <br />Главный тренер: Данилов Виктор Андреевич</p>
+          <div class="w3-col m6 w3-center">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+          </div>
+          <div class="w3-col m6 w3-center">
+
+            <div>
+              <p class="person-text">{{ item.PersonInfo.PersonFullNameRu }} </p>
+              <p v-if="item.DisplayNumber" class="person-number">#{{ item.DisplayNumber }}</p>
+            </div>
+            <p class="person-position">{{ item.Position }}</p>
+            <div>Возраст: {{ item.PersonInfo.Age }} </div>
+            <div>Дата рождения: {{ item.PersonInfo.PersonBirth }}</div>
+
+            <div>Страна: {{ item.CountryName }}</div>
+            <div>Рост: {{ item.Height }}</div>
+            <div>Вес: {{ item.Weight }}</div>
+            <div v-if="item.Rank">Разряд: {{ item.Rank }}</div>
+          </div>
+
+        </div>
+        <!-- Тренеры -->
+        <h1>Тренерский состав</h1>
+        <div v-for="(item, index) in squad.Coaches"
+          class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
+
+          <div class="w3-col s6 m6 w3-center">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+          </div>
+          <div class="w3-col s6 m6 w3-center">
+
+            <div>
+              <p class="person-text">{{ item.PersonInfo.PersonFullNameRu }} </p>
+            </div>
+            <p class="person-position">{{ item.Post }}</p>
+            <div>Возраст: {{ item.PersonInfo.Age }} </div>
+            <div>Дата рождения: {{ item.PersonInfo.PersonBirth }}</div>
+
+            <div>Страна: {{ item.CountryName }}</div>
+            <div v-if="item.Rank">Разряд: {{ item.Rank }}</div>
+          </div>
+
+        </div>
+
+
+        <!-- Стафф -->
+        <h1>Персонал</h1>
+        <div v-for="(item, index) in squad.Staff"
+          class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
+
+          <div class="w3-col s6 m6 w3-center">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+          </div>
+          <div class="w3-col s6 m6 w3-center">
+
+            <div>
+              <p class="person-text">{{ item.PersonInfo.PersonFullNameRu }} </p>
+            </div>
+            <p class="person-position">{{ item.Post }}</p>
+            <div>Возраст: {{ item.PersonInfo.Age }} </div>
+            <div>Дата рождения: {{ item.PersonInfo.PersonBirth }}</div>
+
+            <div>Страна: {{ item.CountryName }}</div>
+            <div v-if="item.Rank">Разряд: {{ item.Rank }}</div>
+          </div>
+
+        </div>
 
       </div>
     </div>
-
   </div>
+</div>
+
+
+</div>

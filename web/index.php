@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../app/style/main.css">
   <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
@@ -155,7 +156,6 @@ if (!isset($page)) {
         },
 
         GetTeamLogoSource(teamId){
-          console.log(teamId);
           let logoSource = "";
 
           logoSource = "http://org.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
@@ -164,7 +164,6 @@ if (!isset($page)) {
 
         AddLogoData(){
           
-          console.log(this.positions);
           let pos = this.positions;
           pos.forEach(el => {
             el.logo = this.GetTeamLogoSource(el.CompTeamName.TeamID);
@@ -190,6 +189,7 @@ if (!isset($page)) {
       
     })
   </script>
+
   <script>
     var matches = new Vue({
       el: '#matches',
@@ -266,6 +266,62 @@ if (!isset($page)) {
       }
     })
     </script>
+
+    <script>
+     var squadMain = new Vue({
+        el: '#mainsquad',
+        data: {
+         squad:{},
+         errors:[]
+        },
+
+    created() {
+      this.fetchInfo();
+    },
+
+    methods: {
+      fetchInfo(){
+
+      axios
+      .get('http://org.infobasket.ru/Widget/TeamRoster/100142?CompID=33259&format=json')
+      .then(response => (this.squad = response.data))
+      .catch(e => { this.error.push(e) })
+      },
+      GetPersonPhotoSource(personID){
+        return 'http://org.infobasket.ru/Widget/GetPersonPhoto/' + personID;
+      }
+    }
+  });
+    </script>
+
+<script>
+     var squadStudent = new Vue({
+        el: '#studentsquad',
+        data: {
+         squad:{},
+         errors:[]
+        },
+
+    created() {
+      this.fetchInfo();
+    },
+
+    methods: {
+      fetchInfo(){
+
+      axios
+      .get('http://asb.infobasket.ru/Widget/TeamRoster/6232?CompID=43029&format=json')
+      .then(response => (this.squad = response.data))
+      .catch(e => { this.error.push(e) })
+      },
+      GetPersonPhotoSource(personID){
+        return 'http://asb.infobasket.ru/Widget/GetPersonPhoto/' + personID;
+      }
+    }
+  });
+    </script>
+
+
 </body>
 
 </html>
