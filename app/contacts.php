@@ -14,16 +14,16 @@
         </div>
         <p>Мы всегда готовы оказать вам помощь и рассмотреть ваши пожелания и предложения в сфере маркетинга, СМИ или
           технической составляющей работы сайта.</p>
-        <form action="../web/mail.php" target="_blank">
+        <form action="../web/mail.php" target="_blank" method="post">
           <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
             <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Имя" required name="Name">
+              <input class="w3-input w3-border" type="text" placeholder="Имя" required name="name">
             </div>
             <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="email">
             </div>
           </div>
-          <input class="w3-input w3-border" type="text" placeholder="Сообщение" required name="Message">
+          <input class="w3-input w3-border" type="text" placeholder="Сообщение" required name="message">
           <button class="w3-button w3-black w3-right w3-section" type="submit">
             <i class="fa fa-paper-plane"></i> ОТПРАВИТЬ СООБЩЕНИЕ
           </button>
