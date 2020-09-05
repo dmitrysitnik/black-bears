@@ -133,7 +133,7 @@
   </div>
 
   <div class="w3-row w3-center">
-    <a href="#" class="w3-button w3-section w3-light-grey">Все достижения</a>
+    <a href="index.php?page=achievements" class="w3-button w3-section w3-light-grey">Все достижения</a>
   </div>
 
 </div>

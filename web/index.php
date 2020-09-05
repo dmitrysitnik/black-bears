@@ -52,6 +52,8 @@ if (!isset($page)) {
     require '../app/student-team.php';
 } elseif ($page == 'history') {
     require '../app/history.php';
+} elseif ($page == 'achievements'){
+  require '../app/achievements.php';
 }
 
 ?>
