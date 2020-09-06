@@ -12,8 +12,7 @@
           <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +7 (800) 800-80-80<br>
           <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: mail@mail.com<br>
         </div>
-        <p>Мы всегда готовы оказать вам помощь и рассмотреть ваши пожелания и предложения в сфере маркетинга, СМИ или
-          технической составляющей работы сайта.</p>
+        <p>Вы можете связаться с нами через форму ниже. Также по любым вопросам можно написать на указанный e-mail или в наши социальные сети</p>
         <form action="../web/mail.php" target="_blank" method="post">
           <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
             <div class="w3-half">

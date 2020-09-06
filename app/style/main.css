@@ -395,3 +395,40 @@ body, html {
   font-size: 30px;
 }
 
+.icon-vk {
+  background-image: url("/app/logo/vk.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.icon-instagram {
+  background-image: url("/app/logo/instagram.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.icon-twitter {
+  background-image: url("/app/logo/twitter.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.icon-gold {
+  background-image: url("/app/logo/gold-cup.svg");
+  width: 30px;
+  height: 30px;
+}
+
+
+.icon-silver {
+  background-image: url("/app/logo/silver-cup.svg");
+  width: 30px;
+  height: 30px;
+}
+
+.icon-bronze {
+  background-image: url("/app/logo/bronze-cup.svg");
+  width: 30px;
+  height: 30px;
+}
+

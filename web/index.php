@@ -16,7 +16,7 @@
 <body>
 
   <div class="topnav w3-bar" id="myTopnav">
-    <a href="/web/index.php" class="w3-button">Домой</a>
+    <a href="/web/index.php" class="w3-button"><i class="fa fa-home fa-2x"></i></a>
 
     <div class="dropdown">
       <button class="dropbtn w3-button">О команде
@@ -36,6 +36,7 @@
     </a>
     <a href="#" style="font-size:15px;" class="icon" onclick="">&#9776;</a>
   </div>
+  <div id="home"></div>
 
   <?php
 $page = $_GET["page"];
@@ -80,14 +81,9 @@ if (!isset($page)) {
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Наверх</a>
     <div class="w3-xlarge w3-section">
-      <a href="https://vk.com/blackbearspolytech" target="_blank">
-        <i class="fa fa-envelope w3-hover-opacity"></i>
-      </a>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
+      <a href="https://vk.com/blackbearspolytech" target="blank"><i class="fa fa-vk w3-hover-opacity"></i></a>
+      <a href="https://vk.com/blackbearspolytech"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a><i class="fa fa-twitter w3-hover-opacity"></i></a>
     </div>
   </footer>
 

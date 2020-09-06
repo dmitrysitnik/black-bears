@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue"></script>
 
 <!-- The start page -->
-<div class="bgimg-1 w3-display-container w3-white" id="home">
+<div class="bgimg-1 w3-display-container w3-white" >
 </div>
 <div class="w3-display-middle" style="white-space:nowrap;">
   <div class="w3-center " data-aos="flip-down">
