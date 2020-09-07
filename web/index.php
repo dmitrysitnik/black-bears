@@ -81,9 +81,9 @@ if (!isset($page)) {
   <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
     <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Наверх</a>
     <div class="w3-xlarge w3-section">
-      <a href="https://vk.com/blackbearspolytech" target="blank"><i class="fa fa-vk w3-hover-opacity"></i></a>
-      <a href="https://vk.com/blackbearspolytech"><i class="fa fa-instagram w3-hover-opacity"></i></a>
-      <a><i class="fa fa-twitter w3-hover-opacity"></i></a>
+      <a href="https://vk.com/blackbearspolytech" target="_blank"><i class="fa fa-vk w3-hover-opacity"></i></a>
+      <a href="https://www.instagram.com/blackbearspolytech/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+      <a href="https://www.youtube.com/channel/UCo6bFQxmow4rn0-Cmfl6BPA" target="_blank"><i class="fa fa-youtube w3-hover-opacity"></i></a>
     </div>
   </footer>
 
