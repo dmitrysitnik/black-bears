@@ -22,7 +22,7 @@
 
             <div>Страна: {{ item.CountryName }}</div>
             <div>Рост: {{ item.Height }}</div>
-            <div>Вес: {{ item.Weight }}</div>
+            <!-- <div>Вес: {{ item.Weight }}</div> -->
             <div v-if="item.Rank">Разряд: {{ item.Rank }}</div>
           </div>
 
