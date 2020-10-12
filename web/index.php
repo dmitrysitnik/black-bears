@@ -137,13 +137,14 @@ if (!isset($page)) {
           // this.AddRoundRobinClass();
           // this.positions = {};
           this.AddLogoData();
+          console.log(this.positions);
           
       },
 
       methods: {
         fetchInfo(){
           axios
-          .get('http://org.infobasket.ru/Widget/RoundRobin/33259?format=json')
+          .get('http://org.infobasket.ru/Widget/RoundRobin/35070?format=json')
         .then(response => (this.positions = response.data))
         .catch(e => { this.errors.push(e) })
         
@@ -210,7 +211,7 @@ if (!isset($page)) {
         fetchInfo(){
 
         axios
-        .get('https://org.infobasket.ru/Widget/CalendarCarousel/33259?&max=50&format=json')
+        .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=50&format=json')
         .then(response => (this.matches = response.data))
         .catch(e => { this.error.push(e) })
         },
@@ -281,7 +282,7 @@ if (!isset($page)) {
       fetchInfo(){
 
       axios
-      .get('http://org.infobasket.ru/Widget/TeamRoster/100142?CompID=33259&format=json')
+      .get('http://org.infobasket.ru/Widget/TeamRoster/100142?CompID=35070&format=json')
       .then(response => (this.squad = response.data))
       .catch(e => { this.error.push(e) })
       },

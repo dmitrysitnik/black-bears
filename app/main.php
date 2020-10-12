@@ -58,7 +58,7 @@
         <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142"
           class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
           <div class="w3-col s4 w3-center">
-            <a class="prev" v-on:click="CarouselMove(-1)">&#10094;</a>
+            <a class="prev" v-on:click="CarouselMove(1)">&#10094;</a>
             <img v-bind:src="item.TeamLogoA" class="carousel-logo" />
           </div>
           <div class="w3-col s4 w3-center">
@@ -71,12 +71,12 @@
               <h5>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h5>
             </div>
             <div>
-              <h3>{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
+              <h3 v-if="item.ScoreA !== null">{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
             </div>
           </div>
           <div class="w3-col s4 w3-center">
             <img v-bind:src="item.TeamLogoB" class="carousel-logo" />
-            <a class="next" v-on:click="CarouselMove(1)">&#10095;</a>
+            <a class="next" v-on:click="CarouselMove(-1)">&#10095;</a>
           </div>
           <div>
           </div>
