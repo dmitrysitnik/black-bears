@@ -5,7 +5,7 @@
       <div id="mainsquad">
         <!-- Игроки -->
         <div v-for="(item, index) in squad.Players"
-          class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
+          class="w3-card-4 w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-light-grey" data-aos="fade-right">
 
           <div class="w3-col m6 w3-center">
             <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
@@ -17,16 +17,17 @@
               <p v-if="item.DisplayNumber" class="person-number">#{{ item.DisplayNumber }}</p>
             </div>
             <p class="person-position">{{ item.Position }}</p>
-            <div>Возраст: {{ item.PersonInfo.Age }} </div>
-            <div>Дата рождения: {{ item.PersonInfo.PersonBirth }}</div>
-
-            <div>Страна: {{ item.CountryName }}</div>
-            <div>Рост: {{ item.Height }}</div>
-            <!-- <div>Вес: {{ item.Weight }}</div> -->
-            <div v-if="item.Rank">Разряд: {{ item.Rank }}</div>
+            <div class="w3-container">
+            <p>Возраст: {{ item.PersonInfo.Age }} 
+            <br>Дата рождения: {{ item.PersonInfo.PersonBirth }}
+            <br>Страна: {{ item.CountryName }}
+            <br>Рост: {{ item.Height }}
+            <p v-if="item.Rank">Разряд: {{ item.Rank }}</p>
+            </div>
           </div>
-
-        </div>
+          </div>
+          
+        
         <!-- Тренеры -->
         <h1>Тренерский состав</h1>
         <div v-for="(item, index) in squad.Coaches"
