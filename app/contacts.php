@@ -5,29 +5,27 @@
       Вы можете связаться напрямую с представителями нашей команды
     </em>
   </p>
-  <div class="w3-row">
-    <div class="w3-col m6">
-      <p class="w3-padding w3-center"> 
-        Генеральный менеджер
-        <br>
-        <power><b>Анастасия Акатова</b></power>
-        <br>
-        <i class="fa fa-phone fa-fw w3-hover-text-black  w3-margin-right"></i> <b>+79046162111</b>
-        <br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black  w3-margin-right"></i> <b>test@bears.ru</b>
-      </p>
-    </div>
-    <div class="w3-col m6">
-      <p class="w3-padding w3-center">
-        Генеральный директор
-        <br>
-        <power><b>Кирилл Володин</b></power>
-        <br> 
-        <i class="fa fa-phone fa-fw w3-hover-text-black w3-margin-right"></i> <b>+79213363933</b>
-        <br>
-        <i class="fa fa-envelope fa-fw w3-hover-text-black w3-margin-right"></i> <b>test@bears.ru</b>
-      </p>
-    </div>
+  <div class="">
+    <p class="w3-padding w3-center">
+      Генеральный менеджер
+      <br>
+      <power><b>Анастасия Акатова</b></power>
+      <br>
+      <i class="fa fa-phone fa-fw w3-hover-text-black  w3-margin-right"></i> <b>+79046162111</b>
+      <br>
+      <i class="fa fa-envelope fa-fw w3-hover-text-black  w3-margin-right"></i> <b>test@bears.ru</b>
+    </p>
+  </div>
+  <div>
+    <p class="w3-padding w3-center">
+      Генеральный директор
+      <br>
+      <power><b>Кирилл Володин</b></power>
+      <br>
+      <i class="fa fa-phone fa-fw w3-hover-text-black w3-margin-right"></i> <b>+79213363933</b>
+      <br>
+      <i class="fa fa-envelope fa-fw w3-hover-text-black w3-margin-right"></i> <b>test@bears.ru</b>
+    </p>
   </div>
   <p class="w3-center">
     <em>
@@ -54,7 +52,7 @@
     </div>
   </div>
 
-  <div class="w3-row w3-padding-32 w3-section" data-aos="fade-up">
+  <div class="w3-row w3-padding-32 w3-section " data-aos="fade-up">
     <div class="w3-content w3-container w3-center">
       <h3>НАШИ ПРОФИЛИ В СОЦИАЛЬНЫХ СЕТЯХ</h3>
       <p class="w3-center">
@@ -68,8 +66,8 @@
         <a href="https://vk.com/blackbearspolytech" target="_blank"><i class="fa icon-vk w3-hover-opacity"></i></a>
         <a href="https://www.instagram.com/blackbearspolytech/" target="_blank"><i
             class="fa icon-instagram fa-2x w3-hover-opacity"></i></a>
-        <a href="https://www.youtube.com/channel/UCo6bFQxmow4rn0-Cmfl6BPA" target="_blank"><i
-            class="fa fa-youtube fa-2x w3-hover-opacity"></i></a>
+        <a href="https://www.youtube.com/channel/UCo6bFQxmow4rn0-Cmfl6BPA" target="_blank">
+          <i class="fa icon-youtube w3-hover-opacity"></i></a>
       </div>
     </div>
   </div>

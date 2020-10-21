@@ -413,6 +413,12 @@ body, html {
   height: 60px;
 }
 
+.icon-youtube { 
+  background-image: url("/app/logo/youtube2.svg");
+  width: 60px;
+  height: 60px;
+}
+
 .icon-gold {
   background-image: url("/app/logo/gold-cup.svg");
   width: 60px;
