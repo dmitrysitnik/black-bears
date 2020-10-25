@@ -53,8 +53,8 @@ if (!isset($page)) {
     require '../app/student-team.php';
 } elseif ($page == 'history') {
     require '../app/history.php';
-} elseif ($page == 'achievements'){
-  require '../app/achievements.php';
+} elseif ($page == 'achievements') {
+    require '../app/achievements.php';
 }
 
 ?>
@@ -138,7 +138,7 @@ if (!isset($page)) {
           // this.positions = {};
           this.AddLogoData();
           console.log(this.positions);
-          
+
       },
 
       methods: {
@@ -147,7 +147,7 @@ if (!isset($page)) {
           .get('http://org.infobasket.ru/Widget/RoundRobin/35070?format=json')
         .then(response => (this.positions = response.data))
         .catch(e => { this.errors.push(e) })
-        
+
         },
 
         AddRoundRobinClass(){
@@ -159,17 +159,17 @@ if (!isset($page)) {
 
           logoSource = "http://org.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
           return logoSource;
-        },  
+        },
 
         AddLogoData(){
-          
+
           let pos = this.positions;
           pos.forEach(el => {
             el.logo = this.GetTeamLogoSource(el.CompTeamName.TeamID);
             console.log(el.logo);
           });
 
-          this.positions = pos; 
+          this.positions = pos;
 
         },
 
@@ -183,9 +183,9 @@ if (!isset($page)) {
           }
         }
 
-        
+
         }
-      
+
     })
   </script>
 
@@ -222,10 +222,31 @@ if (!isset($page)) {
         },
 
         HideCards(){
-          for( let index = 1; index <= this.cards.length; index++){
+
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          var yyyy = today.getFullYear();
+          var Date1 = yyyy + mm + dd;
+          var DateInt =  Number(Date1);
+
+
+          for( let index = 0; index <= this.cards.length; index++){
             // document.getElementsByClassName('carousel-card')[index].className += " card-hide";
-            this.cards[index].className += " card-hide";
+            console.log(DateInt);
+              console.log(this.matches[index].GameDateInt);
+              console.log(this.matches[index].GameDateInt);
+
+            if(this.matches[index].GameDateInt < DateInt){
+              this.cards[index].className += " card-hide";
+              console.log(DateInt);
+              console.log(this.matches[index].GameDateInt);
+            }
+            
           }
+
+          
+
           this.currentCarouselCard = 0;
         },
 
@@ -256,12 +277,12 @@ if (!isset($page)) {
 
           if(Moved){
            //Текущую карточку из карусели необходимо спрятать
-           this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide"; 
+           this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide";
            this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container";
            this.FakeScroll();
            this.currentCarouselCard = newCard;
           }
-          
+
         }
       }
     })
