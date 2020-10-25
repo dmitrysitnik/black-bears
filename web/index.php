@@ -211,8 +211,9 @@ if (!isset($page)) {
         fetchInfo(){
 
         axios
-        .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=50&format=json')
+        .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=100&format=json')
         .then(response => (this.matches = response.data))
+        .sort((a, b) => a.GameDateInt - b.GameDateInt)
         .catch(e => { this.error.push(e) })
         },
 

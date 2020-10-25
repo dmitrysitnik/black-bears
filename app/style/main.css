@@ -478,3 +478,12 @@ body, html {
   background-image: url("../Photo/history/hist8.jpg");
   min-height: 400px;
 }
+
+.achievement {
+  width: 800px;
+}
+
+
+.margin_auto {
+  margin: auto;
+}
