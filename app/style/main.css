@@ -6,7 +6,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -438,3 +438,43 @@ body, html {
   height: 60px;
 }
 
+.hist1 {
+  background-image: url("../Photo/history/hist1.jpg");
+  min-height: 400px;
+}
+
+.hist2 {
+  background-image: url("../Photo/history/hist2.jpg");
+  min-height: 400px;
+}
+
+.hist3 {
+  background-image: url("../Photo/history/hist3.jpg");
+  min-height: 400px;
+}
+
+.hist4 {
+  background-image: url("../Photo/history/hist4.jpg");
+  min-height: 400px;
+}
+
+.hist5 {
+  background-image: url("../Photo/history/hist5.jpg");
+  min-height: 400px;
+}
+
+.hist6 {
+  background-image: url("../Photo/history/hist6.jpg");
+  min-height: 400px;
+}
+
+
+.hist7 {
+  background-image: url("../Photo/history/hist7.jpg");
+  min-height: 400px;
+}
+
+.hist8 {
+  background-image: url("../Photo/history/hist8.jpg");
+  min-height: 400px;
+}
