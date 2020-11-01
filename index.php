@@ -3,12 +3,12 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="../app/style/main.css">
-  <script src="https://code.s3.yandex.net/web-code/smoothly.js"></script>
+  <link rel="stylesheet" href="./app/style/main.css">
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
@@ -16,7 +16,7 @@
 <body>
 
   <div class="topnav w3-bar" id="myTopnav">
-    <a href="/web/index.php" class="w3-button"><i class="fa fa-home fa-2x"></i></a>
+    <a href="index.php" class="w3-button"><i class="fa fa-home fa-2x"></i></a>
 
     <div class="dropdown">
       <button class="dropbtn w3-button">О команде
@@ -42,35 +42,35 @@
 $page = $_GET["page"];
 
 if (!isset($page)) {
-    require '../app/main.php';
+    require './app/main.php';
 } elseif ($page == "team") {
-    require '../app/team.php';
+    require './app/team.php';
 } elseif ($page == 'media') {
-    require '../app/media.php';
+    require './app/media.php';
 } elseif ($page == 'contacts') {
-    require '../app/contacts.php';
+    require './app/contacts.php';
 } elseif ($page == 'student-team') {
-    require '../app/student-team.php';
+    require './app/student-team.php';
 } elseif ($page == 'history') {
-    require '../app/history.php';
+    require './app/history.php';
 } elseif ($page == 'achievements') {
-    require '../app/achievements.php';
+    require './app/achievements.php';
 }
 
 ?>
 
   <div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up">
     <div class="w3-quarter w3-section ">
-      <img class="logo-restriction" src="../app/Photo/Additional/Политех полный лого.png">
+      <img class="logo-restriction" src="./app/Photo/Additional/Политех полный лого.png">
     </div>
     <div class="w3-quarter w3-section">
-      <img class="logo-restriction" src="../app/Photo/Additional/РФБ лого.png">
+      <img class="logo-restriction" src="./app/Photo/Additional/РФБ лого.png">
     </div>
     <div class="w3-quarter w3-section">
-      <img class="logo-restriction" src="../app/Photo/Additional/Logo_FBP.png">
+      <img class="logo-restriction" src="./app/Photo/Additional/Logo_FBP.png">
     </div>
     <div class="w3-quarter w3-section logo-restrictions">
-      <img class="logo-restriction" src="../app/Photo/Additional/asb-vk-logo.jpg">
+      <img class="logo-restriction" src="./app/Photo/Additional/asb-vk-logo.jpg">
     </div>
 
   </div>
@@ -195,7 +195,9 @@ if (!isset($page)) {
       data: {
         matches:{},
         cards:[],
-        currentCarouselCard: 0
+        bearsMatches:[],
+        currentCarouselCard: 0,
+        todayGame: false
       },
 
       created() {
@@ -212,42 +214,52 @@ if (!isset($page)) {
 
         axios
         .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=100&format=json')
-        .then(response => (this.matches = response.data))
-        .sort((a, b) => a.GameDateInt - b.GameDateInt)
+        .then(response => { this.matches = response.data; this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt) })
         .catch(e => { this.error.push(e) })
         },
 
         GetAllCarouselCards(){
+          // this.matches.sort();
           this.cards = document.getElementsByClassName('carousel-card');
+          console.log(this.cards);
+          console.log(this.matches);
+
+          this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142);
         },
 
         HideCards(){
+
+          this.currentCarouselCard = 0;
 
           var today = new Date();
           var dd = String(today.getDate()).padStart(2, '0');
           var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
           var yyyy = today.getFullYear();
-          var Date1 = yyyy + mm + dd;
-          var DateInt =  Number(Date1);
+          var DateString = yyyy + mm + dd;
+          var DateInt =  Number(DateString);
 
 
           for( let index = 0; index <= this.cards.length; index++){
-            // document.getElementsByClassName('carousel-card')[index].className += " card-hide";
-            console.log(DateInt);
-              console.log(this.matches[index].GameDateInt);
-              console.log(this.matches[index].GameDateInt);
 
-            if(this.matches[index].GameDateInt < DateInt){
+            if(this.bearsMatches[index].GameDateInt < DateInt){
               this.cards[index].className += " card-hide";
-              console.log(DateInt);
-              console.log(this.matches[index].GameDateInt);
             }
-            
-          }
+            else if(this.bearsMatches[index].GameDateInt === DateInt){
+              this.currentCarouselCard = index;
+              this.todayGame = true;
+            }
+            else if(this.bearsMatches[index].GameDateInt > DateInt){
 
+              if(!this.todayGame){
+                this.currentCarouselCard = index;
+              } else {
+                this.cards[index].className += " card-hide";
+              }
+
+            }
+ 
+          } 
           
-
-          this.currentCarouselCard = 0;
         },
 
         FakeScroll(){
@@ -341,6 +353,68 @@ if (!isset($page)) {
     }
   });
     </script>
+
+<script>
+    var media = new Vue({
+      el: '#media',
+      data: {
+        photos:[
+          [ 
+            { url: "./app/Photo/media1.jpg" },
+            { url: "./app/Photo/media2.jpg" },
+            { url: "./app/Photo/media3.jpg" },
+            { url: "./app/Photo/media4.jpg" },
+          ],
+          [ 
+            { url: "./app/Photo/media5.jpg" },
+            { url: "./app/Photo/media6.jpg" },
+            { url: "./app/Photo/media7.jpg" },
+            { url: "./app/Photo/media8.jpg" },
+          ],
+          [ 
+            { url: "./app/Photo/media9.jpg" },
+            { url: "./app/Photo/media10.jpg" },
+            { url: "./app/Photo/media11.jpg" },
+            { url: "./app/Photo/media12.jpg" },
+          ],
+          [ 
+            { url: "./app/Photo/media13.jpg" },
+            { url: "./app/Photo/media14.jpg" },
+            { url: "./app/Photo/media15.jpg" },
+            { url: "./app/Photo/media16.jpg" },
+          ],
+        ],
+        visiblePhotos: [],
+        currentBlocks: 1,
+        errors:[]
+      },
+
+      created() {
+        this.init();
+      },
+
+      updated(){
+      },
+
+      methods: {
+        init(){
+          this.visiblePhotos.push(this.photos[0]);
+          this.visiblePhotos.push(this.photos[1]);
+        },
+
+        loadMorePhotos(){
+
+          if(this.photos.length <= this.currentBlocks){
+            return;
+          }
+
+          this.currentBlocks++;
+          this.visiblePhotos.push(this.photos[this.currentBlocks]);
+        }
+      }
+
+    })
+  </script>
 
 
 </body>

@@ -95,7 +95,7 @@
 </div>
 <div class="w3-row">
   <div class="w3-center w3-padding-large">
-    <img src="../app/Photo/Additional/Photo-about-team.jpg"
+    <img src="/app/Photo/Additional/Photo-about-team.jpg"
       class="w3-round w3-image w3-hover-opacity-off w3-animate-opacity" alt="Blood, sweat and tears" width="1000"
       height="700">
   </div>

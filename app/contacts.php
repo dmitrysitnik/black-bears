@@ -11,7 +11,7 @@
       <br>
       <power><b>Анастасия Акатова</b></power>
       <br>
-      <i class="fa fa-phone fa-fw w3-hover-text-black  w3-margin-right"></i> <b>+79046162111</b>
+      <i class="fa fa-phone fa-fw w3-hover-text-black  w3-margin-right"></i> <b>+7 (904) 616-21-11</b>
       <br>
       <i class="fa fa-envelope fa-fw w3-hover-text-black  w3-margin-right"></i> <b>test@bears.ru</b>
     </p>
@@ -22,7 +22,7 @@
       <br>
       <power><b>Кирилл Володин</b></power>
       <br>
-      <i class="fa fa-phone fa-fw w3-hover-text-black w3-margin-right"></i> <b>+79213363933</b>
+      <i class="fa fa-phone fa-fw w3-hover-text-black w3-margin-right"></i> <b>+7 (921) 336-39-33</b>
       <br>
       <i class="fa fa-envelope fa-fw w3-hover-text-black w3-margin-right"></i> <b>test@bears.ru</b>
     </p>

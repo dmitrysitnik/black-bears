@@ -5,7 +5,7 @@
 </div>
 <div class="w3-display-middle" style="white-space:nowrap;">
   <div class="w3-center " data-aos="flip-down">
-    <img class="logo-black-bears" src="../app/Photo/logo/black-bears-logo.png">
+    <img class="logo-black-bears" src="./app/Photo/logo/black-bears-logo.png">
   </div>
 
 </div>
@@ -21,7 +21,7 @@
 <div class="w3-display-container w3-light-grey" data-aos="fade-up">
   <div class="w3-content w3-container w3-center">
     <h3>СУПЕРЛИГА-1</h3>
-    <div id="robin-table" class="w3-content w3-container w3-center">
+    <div id="robin-table" class="w3-content w3-container w3-center overflow-auto">
       <table class="w3-table w3-striped w3-bordered w3-centered">
         <tr>
           <td>Позиция</td>
@@ -86,22 +86,10 @@
   </div>
 </div>
 
-<!-- The dots/circles -->
-<!-- <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-</div> -->
-
-
-<!-- <div class="w3-display-container w3-light-grey">
-  <div class="w3-content w3-container w3-center"><h3>МАТЧИ</h3></div>
-</div> -->
-
 
 <div class="w3-row w3-black">
   <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
-    <iframe width="800" height="450" src="https://www.youtube.com/embed/6q_dJpGyFcE" frameborder="0"
+    <iframe width="500" height="350" src="https://www.youtube.com/embed/6q_dJpGyFcE" frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>

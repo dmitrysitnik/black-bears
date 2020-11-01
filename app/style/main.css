@@ -396,44 +396,44 @@ body, html {
 }
 
 .icon-vk {
-  background-image: url("/app/logo/vk.svg");
+  background-image: url("../logo/vk.svg");
   width: 60px;
   height: 60px;
 }
 
 .icon-instagram {
-  background-image: url("/app/logo/instagram.svg");
+  background-image: url("../logo/instagram.svg");
   width: 60px;
   height: 60px;
 }
 
 .icon-twitter {
-  background-image: url("/app/logo/twitter.svg");
+  background-image: url("../logo/twitter.svg");
   width: 60px;
   height: 60px;
 }
 
 .icon-youtube { 
-  background-image: url("/app/logo/youtube2.svg");
+  background-image: url("../logo/youtube2.svg");
   width: 60px;
   height: 60px;
 }
 
 .icon-gold {
-  background-image: url("/app/logo/gold-cup.svg");
+  background-image: url("../logo/gold-cup.svg");
   width: 60px;
   height: 60px;
 }
 
 
 .icon-silver {
-  background-image: url("/app/logo/silver-cup.svg");
+  background-image: url("../logo/silver-cup.svg");
   width: 60px;
   height: 60px;
 }
 
 .icon-bronze {
-  background-image: url("/app/logo/bronze-cup.svg");
+  background-image: url("../logo/bronze-cup.svg");
   width: 60px;
   height: 60px;
 }
@@ -486,4 +486,8 @@ body, html {
 
 .margin_auto {
   margin: auto;
+}
+
+.overflow-auto {
+  overflow-x:auto;
 }
