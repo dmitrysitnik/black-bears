@@ -31,9 +31,9 @@
 
     <a href="index.php?page=media" class="w3-button w3-hide-small"><i class="fa fa-th"></i> Медиа</a>
     <a href="index.php?page=contacts" class="w3-button w3-hide-small"><i class="fa fa-envelope"></i> Контакты</a>
-    <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
+    <!-- <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
-    </a>
+    </a> -->
     <a href="#" style="font-size:15px;" class="icon" onclick="">&#9776;</a>
   </div>
   <div id="home"></div>
@@ -197,7 +197,8 @@ if (!isset($page)) {
         cards:[],
         bearsMatches:[],
         currentCarouselCard: 0,
-        todayGame: false
+        todayGame: false,
+        foundGame: false
       },
 
       created() {
@@ -247,11 +248,13 @@ if (!isset($page)) {
             else if(this.bearsMatches[index].GameDateInt === DateInt){
               this.currentCarouselCard = index;
               this.todayGame = true;
+              this.foundGame = true;
             }
             else if(this.bearsMatches[index].GameDateInt > DateInt){
 
-              if(!this.todayGame){
+              if(!this.foundGame){
                 this.currentCarouselCard = index;
+                this.foundGame = true;
               } else {
                 this.cards[index].className += " card-hide";
               }

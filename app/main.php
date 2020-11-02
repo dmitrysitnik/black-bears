@@ -63,12 +63,12 @@
           </div>
           <div class="w3-col s4 w3-center">
             <div>
-              <h4>{{ item.LeagueNameRu }}</h4>
+              <h6><b>{{ item.LeagueNameRu }}</b></h6>
             </div>
             <div>{{ item.CompNameRu }}</div>
             <div>{{ item.DisplayDateTimeMsk }}</div>
             <div>
-              <h5>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h5>
+              <h6>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h6>
             </div>
             <div>
               <h3 v-if="item.ScoreA !== null">{{ item.ScoreA }} : {{ item.ScoreB }}</h3>

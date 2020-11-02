@@ -8,7 +8,7 @@
           class="w3-card-4 w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-light-grey" data-aos="fade-right">
 
           <div class="w3-col m6 w3-center">
-            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo grey-shadow">
           </div>
           <div class="w3-col m6 w3-center">
 
@@ -20,9 +20,9 @@
             <div class="w3-container">
             <p>Возраст: {{ item.PersonInfo.Age }} 
             <br>Дата рождения: {{ item.PersonInfo.PersonBirth }}
-            <br>Страна: {{ item.CountryName }}
+            <!-- <br>Страна: {{ item.CountryName }}
             <br>Рост: {{ item.Height }}
-            <p v-if="item.Rank">Разряд: {{ item.Rank }}</p>
+            <p v-if="item.Rank">Разряд: {{ item.Rank }}</p> -->
             </div>
           </div>
           </div>
@@ -34,7 +34,7 @@
           class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
 
           <div class="w3-col s6 m6 w3-center">
-            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo grey-shadow">
           </div>
           <div class="w3-col s6 m6 w3-center">
 
@@ -58,7 +58,7 @@
           class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
 
           <div class="w3-col s6 m6 w3-center">
-            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo">
+            <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo grey-shadow">
           </div>
           <div class="w3-col s6 m6 w3-center">
 

@@ -1,3 +1,4 @@
+<div class="w3-display-container w3-light-grey" data-aos="fade-up">
 <div class="w3-content w3-container w3-padding-64" data-aos="fade-up" id="contact">
   <h3 class="w3-center">КОНТАКТЫ</h3>
   <p class="w3-center">
@@ -5,26 +6,26 @@
       Вы можете связаться напрямую с представителями нашей команды
     </em>
   </p>
-  <div class="">
+  <div class="w3-col m6 w3-padding-16">
     <p class="w3-padding w3-center">
       Генеральный менеджер
       <br>
       <power><b>Анастасия Акатова</b></power>
       <br>
-      <i class="fa fa-phone fa-fw w3-hover-text-black  w3-margin-right"></i> <b>+7 (904) 616-21-11</b>
+      <i class="fa fa-phone fa-fw w3-hover-text-grey "></i> <b><a href="tel:+79046162111" class="no-underscore">+7 (904) 616-21-11</a></b>
       <br>
-      <i class="fa fa-envelope fa-fw w3-hover-text-black  w3-margin-right"></i> <b>test@bears.ru</b>
+      <i class="fa fa-envelope fa-fw w3-hover-text-grey "></i> <b>test@bears.ru</b>
     </p>
   </div>
-  <div>
+  <div class="w3-col m6 w3-padding-16 w3-margin-bottom">
     <p class="w3-padding w3-center">
       Генеральный директор
       <br>
       <power><b>Кирилл Володин</b></power>
       <br>
-      <i class="fa fa-phone fa-fw w3-hover-text-black w3-margin-right"></i> <b>+7 (921) 336-39-33</b>
+      <i class="fa fa-phone fa-fw w3-hover-text-grey "></i> <b><a href='tel:+79213363933' class="no-underscore">+7 (921) 336-39-33</a></b>
       <br>
-      <i class="fa fa-envelope fa-fw w3-hover-text-black w3-margin-right"></i> <b>test@bears.ru</b>
+      <i class="fa fa-envelope fa-fw w3-hover-text-grey "></i> <b>test@bears.ru</b>
     </p>
   </div>
   <p class="w3-center">
@@ -35,7 +36,7 @@
 
   <div class="w3-row w3-section">
     <div class="w3-col m12 w3-panel w3-center">
-      <form action="../web/mail.php" target="_blank" method="post">
+      <form action="mail.php" target="_blank" method="post">
         <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
           <div class="w3-half">
             <input class="w3-input w3-border" type="text" placeholder="Имя" required name="name">
@@ -71,6 +72,6 @@
       </div>
     </div>
   </div>
-
+</div>
 </div>
 </div>

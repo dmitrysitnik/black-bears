@@ -4,98 +4,98 @@
         <ul class="w3-ul w3-card-4">
             
             <li class="w3-bar">
-                <img src="/app/logo/bronze-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат России среди студентов (2016)</span><br>
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: sandybrown"></i> Чемпионат России среди студентов (2016)</span><br>
                 </div>
             </li>
             
             <li class="w3-bar">
-                <img src="/app/logo/silver-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат России среди студентов (2017)</span><br>
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: silver"></i> Чемпионат России среди студентов (2017)</span><br>
                 </div>
             </li>
 
             <li class="w3-bar">
-                <img src="/app/logo/gold-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат России среди студентов (2018, 2019)</span><br>
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: gold"></i> Чемпионат России среди студентов (2018, 2019)</span><br>
                 </div>
             </li>  
 
 
             <li class="w3-bar">
-                <img src="/app/logo/silver-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Суперлига-2 Чемпионат России среди профи (2019)</span><br>
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: silver"></i> Суперлига-2 Чемпионат России среди профи (2019)</span><br>
                 </div>
             </li>
 
             
             <li class="w3-bar">
-                <img src="/app/logo/gold-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Студенческая Суперлига среди студентов (2020)</span><br>
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: gold"></i> Студенческая Суперлига среди студентов (2020)</span><br>
                 </div>
             </li>
 
             <li class="w3-bar">
-                <img src="/app/logo/gold-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Высший дивизион «Санкт-Петербург» среди студентов (2016, 2017, 2018)
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: gold"></i> Высший дивизион «Санкт-Петербург» среди студентов (2016, 2017, 2018)
                     </span><br>
                 </div>
             </li>
 
 
             <li class="w3-bar">
-                <img src="/app/logo/silver-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Высший дивизион «Санкт-Петербург» среди студентов (2020)
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: silver"></i> Высший дивизион «Санкт-Петербург» среди студентов (2020)
                     </span><br>
                 </div>
             </li>
 
             <li class="w3-bar">
-                <img src="/app/logo/bronze-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Высший дивизион «Санкт-Петербург» среди студентов (2019)
-                    </span><br>
-                </div>
-            </li>
-
-
-            <li class="w3-bar">
-                <img src="/app/logo/gold-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
-                <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат Санкт-Петербурга среди любителей (2018)
-                    </span><br>
-                </div>
-            </li>
-
-            <li class="w3-bar">
-                <img src="/app/logo/silver-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
-                <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат Санкт-Петербурга среди любителей (2016, 2017)
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: sandybrown"></i> Высший дивизион «Санкт-Петербург» среди студентов (2019)
                     </span><br>
                 </div>
             </li>
 
 
             <li class="w3-bar">
-                <img src="/app/logo/gold-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат Санкт-Петербурга по баскетболу 3х3 среди студентов (2018)
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: gold"></i> Чемпионат Санкт-Петербурга среди любителей (2018)
+                    </span><br>
+                </div>
+            </li>
+
+            <li class="w3-bar">
+            
+                <div class="w3-bar-item">
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: silver"></i> Чемпионат Санкт-Петербурга среди любителей (2016, 2017)
                     </span><br>
                 </div>
             </li>
 
 
             <li class="w3-bar">
-                <img src="/app/logo/bronze-cup.svg" class="w3-bar-item w3-circle" style="width:80px">
+            
                 <div class="w3-bar-item">
-                    <span class="w3-large">Чемпионат Санкт-Петербурга по баскетболу 3х3 среди студентов (2019)
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: gold"></i> Чемпионат Санкт-Петербурга по баскетболу 3х3 среди студентов (2018)
+                    </span><br>
+                </div>
+            </li>
+
+
+            <li class="w3-bar">
+            
+                <div class="w3-bar-item">
+                    <span class="w3-large"><i class="fa fa-trophy fa-2x" style="color: sandybrown"></i> Чемпионат Санкт-Петербурга по баскетболу 3х3 среди студентов (2019)
                     </span><br>
                 </div>
             </li>     
