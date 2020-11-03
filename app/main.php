@@ -69,8 +69,8 @@
       <div id="matches">
         <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142"
           class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
-          <div class="w3-col s4 w3-center">
-            <a class="prev" v-on:click="CarouselMove(1)">&#10094;</a>
+          <div class="w3-col s4">
+            <a class="prev no_margin" v-on:click="CarouselMove(1)">&#10094;</a>
             <img v-bind:src="item.TeamLogoA" class="carousel-logo" />
           </div>
           <div class="w3-col s4 w3-center">
@@ -88,7 +88,7 @@
           </div>
           <div class="w3-col s4 w3-center">
             <img v-bind:src="item.TeamLogoB" class="carousel-logo" />
-            <a class="next" v-on:click="CarouselMove(-1)">&#10095;</a>
+            <a class="next no_margin" v-on:click="CarouselMove(-1)">&#10095;</a>
           </div>
           <div>
           </div>

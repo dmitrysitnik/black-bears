@@ -38,12 +38,53 @@ body, html {
   min-height: 300px;
 }
 
+.hist1 {
+  background-image: url("../Photo/history/hist1.jpg");
+  min-height: 400px;
+}
+
+.hist2 {
+  background-image: url("../Photo/history/hist2.jpg");
+  min-height: 400px;
+}
+
+.hist3 {
+  background-image: url("../Photo/history/hist3.jpg");
+  min-height: 400px;
+}
+
+.hist4 {
+  background-image: url("../Photo/history/hist4.jpg");
+  min-height: 400px;
+}
+
+.hist5 {
+  background-image: url("../Photo/history/hist5.jpg");
+  min-height: 400px;
+}
+
+.hist6 {
+  background-image: url("../Photo/history/hist6.jpg");
+  min-height: 400px;
+}
+
+
+.hist7 {
+  background-image: url("../Photo/history/hist7.jpg");
+  min-height: 400px;
+}
+
+.hist8 {
+  background-image: url("../Photo/history/hist8.jpg");
+  min-height: 400px;
+}
+
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3 {
+  .bgimg-1, .bgimg-2, .bgimg-3, .hist1, .hist2, .hist3, .hist4, .hist5, .hist6, .hist7, .hist8 {
     background-attachment: scroll;
     min-height: 400px;
   }
@@ -169,7 +210,7 @@ body, html {
 
 
 .carousel-logo{
-  width: 45%;
+  width: 35%;
 }
 
 
@@ -438,46 +479,7 @@ body, html {
   height: 60px;
 }
 
-.hist1 {
-  background-image: url("../Photo/history/hist1.jpg");
-  min-height: 400px;
-}
 
-.hist2 {
-  background-image: url("../Photo/history/hist2.jpg");
-  min-height: 400px;
-}
-
-.hist3 {
-  background-image: url("../Photo/history/hist3.jpg");
-  min-height: 400px;
-}
-
-.hist4 {
-  background-image: url("../Photo/history/hist4.jpg");
-  min-height: 400px;
-}
-
-.hist5 {
-  background-image: url("../Photo/history/hist5.jpg");
-  min-height: 400px;
-}
-
-.hist6 {
-  background-image: url("../Photo/history/hist6.jpg");
-  min-height: 400px;
-}
-
-
-.hist7 {
-  background-image: url("../Photo/history/hist7.jpg");
-  min-height: 400px;
-}
-
-.hist8 {
-  background-image: url("../Photo/history/hist8.jpg");
-  min-height: 400px;
-}
 
 .achievement {
   width: 800px;
@@ -503,5 +505,9 @@ body, html {
 
 .menu-color {
   background-color: #333;
+}
+
+.no_margin {
+  margin: 0;
 }
 
