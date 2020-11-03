@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue"></script>
 
 <!-- The start page -->
-<div class="bgimg-1 w3-display-container w3-white" >
+<div class="bgimg-1 w3-display-container w3-white">
 </div>
 <div class="w3-display-middle" style="white-space:nowrap;">
   <div class="w3-center " data-aos="flip-down">
@@ -11,10 +11,14 @@
 </div>
 </div>
 
-<div class="w3-row w3-light-grey">
-  <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
+<div class="w3-row w3-light-grey w3-center">
+  <h2>BLOOD, SWEAT & NEWS</h2>
+  <div class="w3-content w3-col m6 w3-container w3-center w3-padding-16" id="news" data-aos="fade-up">
     <!-- VK Widget -->
     <div id="vk_groups"></div>
+  </div>
+  <div class="w3-content w3-col m6 w3-container w3-center w3-padding-16" data-aos="fade-up">
+    <div class="elfsight-app-a0559ba6-2697-4de9-860d-58bd112bb329"></div>
   </div>
 </div>
 
@@ -34,14 +38,22 @@
           <td>Процент побед</td>
         </tr>
         <tr v-for="(team, index) in positions" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamPlace }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID)" class="table-logo"/></td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamName.CompTeamShortNameRu }} </td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingGame }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingWin }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingLose }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].StandingPoints }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">{{ team.CompTeamStandings[0].VictoryPercent }}%</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamPlace }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img
+              v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID)" class="table-logo" /></td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamName.CompTeamShortNameRu }} </td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamStandings[0].StandingGame }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamStandings[0].StandingWin }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamStandings[0].StandingLose }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamStandings[0].StandingPoints }}</td>
+          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            {{ team.CompTeamStandings[0].VictoryPercent }}%</td>
         </tr>
       </table>
     </div>
@@ -67,9 +79,9 @@
             </div>
             <div>{{ item.CompNameRu }}</div>
             <div>{{ item.DisplayDateTimeMsk }}</div>
-            <div>
+            <!-- <div>
               <h6>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h6>
-            </div>
+            </div> -->
             <div>
               <h3 v-if="item.ScoreA !== null">{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
             </div>
@@ -89,8 +101,9 @@
 
 <div class="w3-row w3-black">
   <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
-    <iframe width="500" height="350" src="https://www.youtube.com/embed/6q_dJpGyFcE" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="550" height="280" src="https://www.youtube.com/embed/02OBNNyVCic" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
   </div>
 </div>
 

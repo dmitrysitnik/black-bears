@@ -33,10 +33,10 @@
         <div v-for="(item, index) in squad.Coaches"
           class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
 
-          <div class="w3-col s6 m6 w3-center">
+          <div class="w3-col m6 w3-center">
             <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo grey-shadow">
           </div>
-          <div class="w3-col s6 m6 w3-center">
+          <div class="w3-col m6 w3-center">
 
             <div>
               <p class="person-text">{{ item.PersonInfo.PersonFullNameRu }} </p>
@@ -57,10 +57,10 @@
         <div v-for="(item, index) in squad.Staff"
           class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
 
-          <div class="w3-col s6 m6 w3-center">
+          <div class="w3-col m6 w3-center">
             <img v-bind:src="GetPersonPhotoSource(item.PersonID)" class="person-photo grey-shadow">
           </div>
-          <div class="w3-col s6 m6 w3-center">
+          <div class="w3-col m6 w3-center">
 
             <div>
               <p class="person-text">{{ item.PersonInfo.PersonFullNameRu }} </p>

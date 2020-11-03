@@ -26,6 +26,7 @@
         <a href="index.php?page=team" class="w3-button">Основная команда</a>
         <a href="index.php?page=student-team" class="w3-button">Студенческая команда</a>
         <a href="index.php?page=history" class="w3-button">История</a>
+        <a href="index.php?page=achievements" class="w3-button">Достижения команды</a>
       </div>
     </div>
 
@@ -34,9 +35,18 @@
     <!-- <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a> -->
-    <a href="#" style="font-size:15px;" class="icon" onclick="">&#9776;</a>
+    <a href="#" style="font-size:20px;" class="icon" onclick="toggleMobileMenu()">&#9776;</a>
   </div>
-  <div id="home"></div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-text-white w3-hide w3-hide-large w3-hide-medium menu-color">
+    <a href="index.php?page=team" class="w3-bar-item w3-button" onclick="">Основная команда</a>
+    <a href="index.php?page=student-team" class="w3-bar-item w3-button" onclick="">Студенческая команда</a>
+    <a href="index.php?page=history" class="w3-bar-item w3-button" onclick="">История</a>
+    <a href="index.php?page=media" class="w3-bar-item w3-button">Медиа</a>
+    <a href="index.php?page=contacts" class="w3-bar-item w3-button">Контакты</a>
+    <a href="index.php?page=achievements" class="w3-bar-item w3-button">Достижения команды</a>
+  </div>
 
   <?php
 $page = $_GET["page"];
@@ -87,6 +97,8 @@ if (!isset($page)) {
     </div>
   </footer>
 
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
   <script>
     function myFunction() {
       var x = document.getElementById("myTopnav");
@@ -96,6 +108,19 @@ if (!isset($page)) {
         x.className = "topnav";
       }
     }
+
+    // Used to toggle the menu on small screens when clicking on the menu button
+function toggleMobileMenu() {
+    var x = document.getElementById("navDemo");
+    let logo = document.getElementsByClassName("logo-black-bears")[0];
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        logo.className += " w3-hide"
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        logo.className = logo.className.replace(" w3-hide", "");
+    }
+}
   </script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -346,7 +371,7 @@ if (!isset($page)) {
       fetchInfo(){
 
       axios
-      .get('http://asb.infobasket.ru/Widget/TeamRoster/6232?CompID=43029&format=json')
+      .get('http://asb.infobasket.ru/Widget/TeamRoster/6232?CompID=43541&format=json')
       .then(response => (this.squad = response.data))
       .catch(e => { this.error.push(e) })
       },

@@ -1,7 +1,8 @@
-<div class="w3-content w3-center w3-container w3-padding-64" data-aos="fade-up">
+<div class="w3-display-container w3-light-grey">
+<div class="w3-content w3-center w3-container w3-padding-16" data-aos="fade-up">
     <h1>Достижения команды:</h1>
-    <div class="w3-container w3-center achievement margin_auto">
-        <ul class="w3-ul w3-card-4">
+    <div class="w3-container w3-center">
+        <ul class="w3-ul">
             
             <li class="w3-bar">
             
@@ -103,4 +104,5 @@
 
         </ul>
     </div>
+</div>
 </div>
