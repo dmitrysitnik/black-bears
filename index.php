@@ -35,7 +35,7 @@
     <!-- <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
       <i class="fa fa-search"></i>
     </a> -->
-    <a href="#" style="font-size:20px;" class="icon" onclick="toggleMobileMenu()">&#9776;</a>
+    <a href="#" style="font-size:20px;" class="icon" onclick="toggleMobileMenu()"><i class="fa fa-bars fa-1x"></i></a>
   </div>
 
   <!-- Navbar on small screens -->
@@ -151,7 +151,6 @@ function toggleMobileMenu() {
     var app = new Vue({
       el: '#robin-table',
       data: {
-        message: '<h3>Hello Vue!</h3>',
         info: {},
         matches:{},
         cards:[],
@@ -167,10 +166,7 @@ function toggleMobileMenu() {
       },
 
       updated(){
-          // this.AddRoundRobinClass();
-          // this.positions = {};
           this.AddLogoData();
-          console.log(this.positions);
 
       },
 
@@ -199,7 +195,6 @@ function toggleMobileMenu() {
           let pos = this.positions;
           pos.forEach(el => {
             el.logo = this.GetTeamLogoSource(el.CompTeamName.TeamID);
-            console.log(el.logo);
           });
 
           this.positions = pos;
@@ -260,11 +255,7 @@ Vue.use(loader);
         },
 
         GetAllCarouselCards(){
-          // this.matches.sort();
           this.cards = document.getElementsByClassName('carousel-card');
-          console.log(this.cards);
-          console.log(this.matches);
-
           this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142);
         },
 
@@ -289,12 +280,14 @@ Vue.use(loader);
               this.currentCarouselCard = index;
               this.todayGame = true;
               this.foundGame = true;
+              this.cards[index].className += " flex-center-align";
             }
             else if(this.bearsMatches[index].GameDateInt > DateInt){
 
               if(!this.foundGame){
                 this.currentCarouselCard = index;
                 this.foundGame = true;
+                this.cards[index].className += " flex-center-align";
               } else {
                 this.cards[index].className += " card-hide";
               }
@@ -333,7 +326,7 @@ Vue.use(loader);
           if(Moved){
            //Текущую карточку из карусели необходимо спрятать
            this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide";
-           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container";
+           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container flex-center-align";
            this.FakeScroll();
            this.currentCarouselCard = newCard;
           }

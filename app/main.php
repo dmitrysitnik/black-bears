@@ -67,7 +67,7 @@
 
 <div class="w3-display-container w3-light-grey">
   <div class="w3-content w3-container w3-center">
-    <div  data-aos="fade-up">
+    <div data-aos="fade-up">
       <h3>МАТЧИ КОМАНДЫ</h3>
       <div id="matches" class="w3-content w3-container w3-center">
         <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
@@ -107,7 +107,7 @@
 
 <div class="w3-row w3-black">
   <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
-    <iframe width="550" height="280" src="https://www.youtube.com/embed/02OBNNyVCic" frameborder="0"
+    <iframe width="470" height="280" src="https://www.youtube.com/embed/02OBNNyVCic" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
   </div>

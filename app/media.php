@@ -6,7 +6,7 @@
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div id="media" class="w3-center">
     <div v-for="(item, index) in visiblePhotos">
-      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="5" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
+      
       <div class="w3-row-padding w3-center w3-section">
         
         <div class="w3-col m3">
@@ -25,49 +25,11 @@
           <img v-bind:src="item[3].url" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"/>
         </div>
       </div>
-
-
-        
-
-        <!-- <div class="w3-col m3">
-          <img src="/app/Photo/media1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media10.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-            alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div> -->
-      <!-- </div> -->
-
-      <!-- <div class="w3-row-padding w3-center w3-section">
-        <div class="w3-col m3">
-          <img src="/app/Photo/media5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="">
-        </div>
-
-        <div class="w3-col m3">
-          <img src="/app/Photo/media11.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-            alt="">
-        </div>
-      </div> -->
     </div>
 
-
+    <div>
+      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="5" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
+    </div>
     <button v-on:click="loadMorePhotos()" class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">ЗАГРУЗИТЬ ЕЩЕ</button>
   </div>
 </div>
