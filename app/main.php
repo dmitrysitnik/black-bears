@@ -25,7 +25,10 @@
 <div class="w3-display-container w3-light-grey" data-aos="fade-up">
   <div class="w3-content w3-container w3-center">
     <h3>СУПЕРЛИГА-1</h3>
+    
     <div id="robin-table" class="w3-content w3-container w3-center overflow-auto">
+
+      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
       <table class="w3-table w3-striped w3-bordered w3-centered">
         <tr>
           <td>Позиция</td>
@@ -64,9 +67,10 @@
 
 <div class="w3-display-container w3-light-grey">
   <div class="w3-content w3-container w3-center">
-    <div class="w3-margin-top" data-aos="fade-up">
+    <div  data-aos="fade-up">
       <h3>МАТЧИ КОМАНДЫ</h3>
-      <div id="matches">
+      <div id="matches" class="w3-content w3-container w3-center">
+        <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
         <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142"
           class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
           <div class="w3-col s2">
@@ -81,9 +85,9 @@
             </div>
             <div>{{ item.CompNameRu }}</div>
             <div>{{ item.DisplayDateTimeMsk }}</div>
-            <!-- <div>
+            <div>
               <h6>{{ item.ShortTeamNameAru }} - {{ item.ShortTeamNameBru }}</h6>
-            </div> -->
+            </div>
             <div>
               <h3 v-if="item.ScoreA !== null">{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
             </div>
@@ -93,8 +97,6 @@
           </div>
           <div class="w3-col s2">
             <a class="next" v-on:click="CarouselMove(-1)">&#10095;</a>
-          </div>
-          <div>
           </div>
         </div>
       </div>

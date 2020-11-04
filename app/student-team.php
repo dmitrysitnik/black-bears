@@ -3,6 +3,7 @@
     <div class="w3-margin-top" data-aos="fade-up">
       <h1>Состав команды</h1>
       <div id="studentsquad">
+      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
         <!-- Игроки -->
         <div v-for="(item, index) in squad.Players"
           class="w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">

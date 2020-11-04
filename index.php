@@ -68,7 +68,7 @@ if (!isset($page)) {
 }
 
 ?>
-
+<pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
   <div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up">
     <div class="w3-quarter w3-section ">
       <img class="logo-restriction" src="./app/Photo/Additional/Политех полный лого.png">
@@ -122,7 +122,9 @@ function toggleMobileMenu() {
     }
 }
   </script>
-
+  <script>
+    
+  </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
@@ -140,7 +142,12 @@ function toggleMobileMenu() {
     VK.Widgets.Group("vk_groups", { mode: 4, width: "auto", no_cover: 1, height: "700" }, 76018378);
   </script>
 
+<script src="https://unpkg.com/vue-ui-preloader"></script>
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/vue-ui-preloader/dist/loader.css">
+
 <script>
+  Vue.use(loader);
+
     var app = new Vue({
       el: '#robin-table',
       data: {
@@ -151,8 +158,9 @@ function toggleMobileMenu() {
         currentCarouselCard: 0,
         positions:{},
         logo: "",
-        errors:[]
-      },
+        errors:[],
+        isLoading: true
+      },   
 
       created() {
         this.fetchInfo();
@@ -170,7 +178,7 @@ function toggleMobileMenu() {
         fetchInfo(){
           axios
           .get('http://org.infobasket.ru/Widget/RoundRobin/35070?format=json')
-        .then(response => (this.positions = response.data))
+        .then(response => { this.positions = response.data; this.isLoading = false; })
         .catch(e => { this.errors.push(e) })
 
         },
@@ -215,6 +223,8 @@ function toggleMobileMenu() {
   </script>
 
   <script>
+Vue.use(loader);
+
     var matches = new Vue({
       el: '#matches',
       data: {
@@ -223,8 +233,13 @@ function toggleMobileMenu() {
         bearsMatches:[],
         currentCarouselCard: 0,
         todayGame: false,
-        foundGame: false
+        foundGame: false,
+        isLoading:true
       },
+
+      components:{
+          loader:loader
+        },
 
       created() {
         this.fetchInfo();
@@ -240,7 +255,7 @@ function toggleMobileMenu() {
 
         axios
         .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=100&format=json')
-        .then(response => { this.matches = response.data; this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt) })
+        .then(response => { this.matches = response.data; this.isLoading = false; this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt) })
         .catch(e => { this.error.push(e) })
         },
 
@@ -329,11 +344,18 @@ function toggleMobileMenu() {
     </script>
 
     <script>
+
+    Vue.use(loader);
+
      var squadMain = new Vue({
         el: '#mainsquad',
         data: {
          squad:{},
-         errors:[]
+         errors:[],
+         isLoading: true
+        },
+        components: {
+          loader: loader
         },
 
     created() {
@@ -345,7 +367,7 @@ function toggleMobileMenu() {
 
       axios
       .get('http://org.infobasket.ru/Widget/TeamRoster/100142?CompID=35070&format=json')
-      .then(response => (this.squad = response.data))
+      .then(response => { this.squad = response.data; this.isLoading = false;})
       .catch(e => { this.error.push(e) })
       },
       GetPersonPhotoSource(personID){
@@ -360,7 +382,11 @@ function toggleMobileMenu() {
         el: '#studentsquad',
         data: {
          squad:{},
-         errors:[]
+         errors:[],
+         isLoading: true
+        },
+        components: {
+          loader: loader
         },
 
     created() {
@@ -372,7 +398,7 @@ function toggleMobileMenu() {
 
       axios
       .get('http://asb.infobasket.ru/Widget/TeamRoster/6232?CompID=43541&format=json')
-      .then(response => (this.squad = response.data))
+      .then(response => { this.squad = response.data; this.isLoading = false; })
       .catch(e => { this.error.push(e) })
       },
       GetPersonPhotoSource(personID){
@@ -414,7 +440,12 @@ function toggleMobileMenu() {
         ],
         visiblePhotos: [],
         currentBlocks: 1,
-        errors:[]
+        errors:[],
+        isLoading: false
+      },
+
+      components: {
+        loader: loader
       },
 
       created() {
@@ -431,10 +462,13 @@ function toggleMobileMenu() {
         },
 
         loadMorePhotos(){
-
+          
           if(this.photos.length <= this.currentBlocks){
             return;
           }
+
+          this.isLoading = true;
+          setTimeout(()=>{ this.isLoading = false}, 1000);
 
           this.currentBlocks++;
           this.visiblePhotos.push(this.photos[this.currentBlocks]);

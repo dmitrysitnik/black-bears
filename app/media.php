@@ -6,7 +6,7 @@
   <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
   <div id="media" class="w3-center">
     <div v-for="(item, index) in visiblePhotos">
-
+      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="5" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
       <div class="w3-row-padding w3-center w3-section">
         
         <div class="w3-col m3">
