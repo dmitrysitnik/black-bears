@@ -32,9 +32,6 @@
 
     <a href="index.php?page=media" class="w3-button w3-hide-small"><i class="fa fa-th"></i> Медиа</a>
     <a href="index.php?page=contacts" class="w3-button w3-hide-small"><i class="fa fa-envelope"></i> Контакты</a>
-    <!-- <a href="#" class="w3-button w3-hide-small w3-right w3-hover-red">
-      <i class="fa fa-search"></i>
-    </a> -->
     <a href="#" style="font-size:20px;" class="icon" onclick="toggleMobileMenu()"><i class="fa fa-bars fa-1x"></i></a>
   </div>
 
@@ -47,7 +44,7 @@
     <a href="index.php?page=contacts" class="w3-bar-item w3-button">Контакты</a>
     <a href="index.php?page=achievements" class="w3-bar-item w3-button">Достижения команды</a>
   </div>
-
+  <div id="home"></div>
   <?php
 $page = $_GET["page"];
 
@@ -280,14 +277,14 @@ Vue.use(loader);
               this.currentCarouselCard = index;
               this.todayGame = true;
               this.foundGame = true;
-              this.cards[index].className += " flex-center-align";
+              // this.cards[index].className += " flex-center-align";
             }
             else if(this.bearsMatches[index].GameDateInt > DateInt){
 
               if(!this.foundGame){
                 this.currentCarouselCard = index;
                 this.foundGame = true;
-                this.cards[index].className += " flex-center-align";
+                // this.cards[index].className += " flex-center-align";
               } else {
                 this.cards[index].className += " card-hide";
               }
@@ -326,7 +323,7 @@ Vue.use(loader);
           if(Moved){
            //Текущую карточку из карусели необходимо спрятать
            this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide";
-           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container flex-center-align";
+           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container";
            this.FakeScroll();
            this.currentCarouselCard = newCard;
           }
