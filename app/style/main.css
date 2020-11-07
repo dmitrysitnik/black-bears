@@ -173,7 +173,7 @@ body, html {
 }
 
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
+  /* .topnav.responsive {position: relative;} */
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
@@ -187,10 +187,11 @@ body, html {
   .topnav.responsive .dropdown {float: none;}
   .topnav.responsive .dropdown-content {position: relative;}
   .topnav.responsive .dropdown .dropbtn {
-    display: block;
+    display: none;
     width: 100%;
     text-align: left;
   }
+  
 }
 
 .logo-black-bears{
@@ -520,5 +521,20 @@ body, html {
   display: flex;
   align-items: center;
 }
+
+.overflow_visible {
+  overflow: visible;
+}
+
+.mobile-menu {
+  position: relative;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  z-index: 100;
+}
+
+
 
 

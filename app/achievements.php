@@ -1,4 +1,4 @@
-<div class="w3-display-container w3-light-grey">
+<div class="w3-display-container w3-light-grey w3-padding-64">
 <div class="w3-content w3-center w3-container w3-padding-16" data-aos="fade-up">
     <h1>Достижения команды:</h1>
     <div class="w3-container w3-center">

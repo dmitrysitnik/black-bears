@@ -13,9 +13,9 @@
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
-<body>
+<body id="body">
 
-  <div class="topnav w3-bar" id="myTopnav">
+  <div class="topnav w3-bar w3-top responsive overflow_visible" id="myTopnav">
     <a href="index.php" class="w3-button"><i class="fa fa-home fa-2x"></i></a>
 
     <div class="dropdown">
@@ -36,7 +36,7 @@
   </div>
 
   <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-text-white w3-hide w3-hide-large w3-hide-medium menu-color">
+  <div id="navDemo" class="w3-bar-block w3-text-white w3-hide w3-hide-large w3-hide-medium menu-color mobile-menu" style="overflow: hidden;">
     <a href="index.php?page=team" class="w3-bar-item w3-button" onclick="">Основная команда</a>
     <a href="index.php?page=student-team" class="w3-bar-item w3-button" onclick="">Студенческая команда</a>
     <a href="index.php?page=history" class="w3-bar-item w3-button" onclick="">История</a>
@@ -65,19 +65,18 @@ if (!isset($page)) {
 }
 
 ?>
-<pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
   <div class="w3-row w3-center w3-white w3-padding-16" data-aos="fade-up">
     <div class="w3-quarter w3-section ">
-      <img class="logo-restriction" src="./app/Photo/Additional/Политех полный лого.png">
+      <a href="https://www.spbstu.ru/" target="_blank"><img class="logo-restriction" src="./app/Photo/Additional/Политех полный лого.png"></a>
     </div>
     <div class="w3-quarter w3-section">
-      <img class="logo-restriction" src="./app/Photo/Additional/РФБ лого.png">
+      <a href="https://russiabasket.ru/" target="_blank"><img class="logo-restriction" src="./app/Photo/Additional/РФБ лого.png"></a>
     </div>
     <div class="w3-quarter w3-section">
-      <img class="logo-restriction" src="./app/Photo/Additional/Logo_FBP.png">
+      <a href="https://www.fbp.ru/" target="_blank"><img class="logo-restriction" src="./app/Photo/Additional/Logo_FBP.png"></a>
     </div>
     <div class="w3-quarter w3-section logo-restrictions">
-      <img class="logo-restriction" src="./app/Photo/Additional/asb-vk-logo.jpg">
+      <a href="http://asbasket.ru/" target="_blank"><img class="logo-restriction" src="./app/Photo/Additional/asb-vk-logo.jpg"></a>
     </div>
 
   </div>
@@ -97,25 +96,41 @@ if (!isset($page)) {
   <script src="https://apps.elfsight.com/p/platform.js" defer></script>
 
   <script>
-    function myFunction() {
-      var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
-      }
-    }
+    // window.onscroll = function() {myFunction()};
+// function myFunction() {
+//     var navbar = document.getElementById("myTopnav");
+//     if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+//         navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+//     } else {
+//         navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+//     }
+// }
+
+    // function myFunction() {
+    //   var x = document.getElementById("myTopnav");
+    //   if (x.className === "topnav") {
+    //     x.className += " responsive";
+    //   } else {
+    //     x.className = "topnav";
+    //   }
+    // }
 
     // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMobileMenu() {
     var x = document.getElementById("navDemo");
+    var topnav = document.getElementById("myTopnav");
     let logo = document.getElementsByClassName("logo-black-bears")[0];
+    let body = document.getElementById("body");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
-        logo.className += " w3-hide"
+        logo.className += " w3-hide";
+        topnav.className.replace( "overflow_visible", "");
+        body.style = "overflow: hidden;"
     } else {
         x.className = x.className.replace(" w3-show", "");
         logo.className = logo.className.replace(" w3-hide", "");
+        topnav.className += " overflow_visible";
+        body.style = "";
     }
 }
   </script>
