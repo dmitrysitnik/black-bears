@@ -574,4 +574,12 @@ body, html {
   border-top: none;
 }
 
+.padding-top-50 {
+  padding-top: 50px;
+}
+
+.padding-top-30 {
+  padding-top: 30px;
+}
+
 

@@ -121,10 +121,10 @@
           class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-white">
           <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40"
           objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
-          <div class="w3-col m2">
+          <div class="w3-col m2 padding-top-50">
             <a class="prev no_margin" v-on:click="CarouselMove(1)">&#10094;</a>
           </div>
-          <div class="w3-col m2">
+          <div class="w3-col m2 padding-top-30">
             <img v-bind:src="item.TeamLogoA" class="carousel-logo no_margin" />
           </div>
           <div class="w3-col m4 w3-center">
@@ -140,10 +140,10 @@
               <h3 v-if="item.ScoreA !== null">{{ item.ScoreA }} : {{ item.ScoreB }}</h3>
             </div>
           </div>
-          <div class="w3-col m2 w3-center">
+          <div class="w3-col m2 w3-center padding-top-30">
             <img v-bind:src="item.TeamLogoB" class="carousel-logo no_margin" />
           </div>
-          <div class="w3-col m2">
+          <div class="w3-col m2 padding-top-50">
             <a class="next" v-on:click="CarouselMove(-1)">&#10095;</a>
           </div>
         </div>
@@ -154,7 +154,7 @@
 
 
 <div class="w3-row w3-black">
-  <div class="w3-content w3-container w3-center w3-padding-64" id="news" data-aos="fade-up">
+  <div class="w3-content w3-container w3-center w3-padding-64" id="news">
     <iframe width="320" height="200" src="https://www.youtube.com/embed/02OBNNyVCic" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen></iframe>
@@ -169,7 +169,7 @@
   </div>
 </div>
 
-<div class="w3-row w3-center w3-black w3-padding-16" data-aos="fade-right">
+<div class="w3-row w3-center w3-black w3-padding-16"ß>
   <div class="w3-quarter w3-section">
     <span class="w3-xlarge">1Х</span><br>
     Серебряные призеры Суперлиги-2 Чемпионата России
