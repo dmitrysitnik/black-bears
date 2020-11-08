@@ -115,6 +115,27 @@ if (!isset($page)) {
     //   }
     // }
 
+    function openTableTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
     // Used to toggle the menu on small screens when clicking on the menu button
 function toggleMobileMenu() {
     var x = document.getElementById("navDemo");
@@ -168,6 +189,7 @@ function toggleMobileMenu() {
         cards:[],
         currentCarouselCard: 0,
         positions:{},
+        studentPositions: {},
         logo: "",
         errors:[],
         isLoading: true
@@ -189,16 +211,26 @@ function toggleMobileMenu() {
         .then(response => { this.positions = response.data; this.isLoading = false; })
         .catch(e => { this.errors.push(e) })
 
+
+        axios
+        .get('http://asb.infobasket.ru/Widget/RoundRobin/43541?format=json')
+        .then( response => { this.studentPositions = response.data; })
+        .catch(e => { this.error.push(e) })
         },
 
         AddRoundRobinClass(){
           document.getElementsByClassName('round-robin')[0].className += " w3-table w3-striped w3-bordered";
         },
 
-        GetTeamLogoSource(teamId){
+        GetTeamLogoSource(teamId, isAsb){
           let logoSource = "";
 
-          logoSource = "http://org.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
+          if(!isAsb){
+            logoSource = "http://org.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
+          } else {
+            logoSource = "http://asb.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
+          }
+          
           return logoSource;
         },
 
@@ -215,7 +247,7 @@ function toggleMobileMenu() {
 
         IsBlackBears(team){
 
-          if(team === 100142){
+          if(team === 100142 || team === 6232){
             return true;
           }
           else {
@@ -262,13 +294,26 @@ Vue.use(loader);
 
         axios
         .get('https://org.infobasket.ru/Widget/CalendarCarousel/35070?&max=100&format=json')
-        .then(response => { this.matches = response.data; this.isLoading = false; this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt) })
+        .then(response => { this.matches = response.data;
+          axios
+            .get('https://asb.infobasket.ru/Widget/CalendarCarousel/43541?&max=100&format=json')
+            .then(responseNew => { 
+              let matchesNew = responseNew.data; 
+              this.matches = this.matches.concat(matchesNew);  
+              this.isLoading = false; 
+              this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt);
+              this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142 || bears.TeamAid === 6232 || bears.TeamBid === 6232);
+              console.log(this.bearsMatches);
+            })
+          
+        })
         .catch(e => { this.error.push(e) })
-        },
+
+      },
 
         GetAllCarouselCards(){
           this.cards = document.getElementsByClassName('carousel-card');
-          this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142);
+          // this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142 || bears.TeamAid === 6232 || bears.TeamBid === 6232);
         },
 
         HideCards(){
@@ -299,7 +344,6 @@ Vue.use(loader);
               if(!this.foundGame){
                 this.currentCarouselCard = index;
                 this.foundGame = true;
-                // this.cards[index].className += " flex-center-align";
               } else {
                 this.cards[index].className += " card-hide";
               }
@@ -337,8 +381,8 @@ Vue.use(loader);
 
           if(Moved){
            //Текущую карточку из карусели необходимо спрятать
-           this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container card-hide";
-           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container";
+           this.cards[this.currentCarouselCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-white card-hide";
+           this.cards[newCard].className = "carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-white";
            this.FakeScroll();
            this.currentCarouselCard = newCard;
           }

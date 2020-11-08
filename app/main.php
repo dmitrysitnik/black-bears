@@ -23,43 +23,90 @@
 </div>
 
 <div class="w3-display-container w3-light-grey" data-aos="fade-up">
-  <div class="w3-content w3-container w3-center">
-    <h3>СУПЕРЛИГА-1</h3>
-    
-    <div id="robin-table" class="w3-content w3-container w3-center overflow-auto">
 
-      <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
-      <table class="w3-table w3-striped w3-bordered w3-centered">
-        <tr>
-          <td>Позиция</td>
-          <td></td>
-          <td>Команда</td>
-          <td>Игры</td>
-          <td>Победы</td>
-          <td>Поражения</td>
-          <td>Очки</td>
-          <td>Процент побед</td>
-        </tr>
-        <tr v-for="(team, index) in positions" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamPlace }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img
-              v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID)" class="table-logo" /></td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamName.CompTeamShortNameRu }} </td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamStandings[0].StandingGame }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamStandings[0].StandingWin }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamStandings[0].StandingLose }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamStandings[0].StandingPoints }}</td>
-          <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
-            {{ team.CompTeamStandings[0].VictoryPercent }}%</td>
-        </tr>
-      </table>
+  
+
+
+
+  <div class="w3-content w3-container w3-center">
+    
+    <!-- Tab links -->
+  <div class="tab w3-center">
+    <button class="tablinks active" onclick="openTableTab(event, 'super-league')"><h5>Суперлига-1</h5></button>
+    <button class="tablinks" onclick="openTableTab(event, 'student-league')"><h5>Студенческая лига РЖД</h5></button>
+  </div>
+    <div id="robin-table" class="w3-content w3-container w3-center overflow-auto">
+      <!-- Tab content -->
+      <div id="super-league" class="tabcontent" style="display: block;">
+        <table class="w3-table w3-striped w3-bordered w3-centered">
+          <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40"
+          objectbg="#999793" opacity="80" disableScrolling="false" name="dots"></loader>
+          <tr>
+            <td>Позиция</td>
+            <td></td>
+            <td>Команда</td>
+            <td>Игры</td>
+            <td>Победы</td>
+            <td>Поражения</td>
+            <td>Очки</td>
+            <td>Процент побед</td>
+          </tr>
+          <tr v-for="(team, index) in positions" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamPlace }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img
+                v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID, false)" class="table-logo" /></td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamName.CompTeamShortNameRu }} </td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingGame }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingWin }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingLose }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingPoints }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].VictoryPercent }}%</td>
+          </tr>
+        </table>
+        
+      </div>
+      <div id='student-league' class="tabcontent">
+        <table class="w3-table w3-striped w3-bordered w3-centered">
+          <tr>
+            <td>Позиция</td>
+            <td></td>
+            <td>Команда</td>
+            <td>Игры</td>
+            <td>Победы</td>
+            <td>Поражения</td>
+            <td>Очки</td>
+            <td>Процент побед</td>
+          </tr>
+          <tr v-for="(team, index) in studentPositions" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamPlace }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}"><img
+                v-bind:src="GetTeamLogoSource(team.CompTeamName.TeamID, true)" class="table-logo" /></td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamName.CompTeamShortNameRu }} </td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingGame }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingWin }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingLose }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].StandingPoints }}</td>
+            <td style="vertical-align: middle" :class="{ bbline: IsBlackBears(team.CompTeamName.TeamID )}">
+              {{ team.CompTeamStandings[0].VictoryPercent }}%</td>
+          </tr>
+        </table>
+      </div>
     </div>
+
+
   </div>
 </div>
 
@@ -67,12 +114,13 @@
 
 <div class="w3-display-container w3-light-grey">
   <div class="w3-content w3-container w3-center">
-    <div data-aos="fade-up">
+    <div data-aos="">
       <h3>МАТЧИ КОМАНДЫ</h3>
       <div id="matches" class="w3-content w3-container w3-center">
-        <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40" objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
-        <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142"
-          class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container" data-aos="fade-right">
+        <div v-for="(item, index) in matches" v-if="item.TeamAid === 100142 || item.TeamBid === 100142 || item.TeamAid === 6232 || item.TeamBid === 6232"
+          class="carousel-card w3-card w3-padding-16 w3-margin-bottom w3-row slideshow-container w3-white">
+          <loader v-if="isLoading" object="#181716" color1="#ffffff" color2="#17fd3d" size="8" speed="2" bg="#343a40"
+          objectbg="#999793" opacity="0" disableScrolling="false" name="dots"></loader>
           <div class="w3-col m2">
             <a class="prev no_margin" v-on:click="CarouselMove(1)">&#10094;</a>
           </div>
