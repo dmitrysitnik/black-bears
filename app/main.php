@@ -4,7 +4,7 @@
 <div class="bgimg-1 w3-display-container w3-white">
 </div>
 <div class="w3-display-middle" style="white-space:nowrap;">
-  <div class="w3-center " data-aos="flip-down">
+  <div class="w3-center" style="min-height: auto;">
     <img class="logo-black-bears" src="./app/Photo/logo/black-bears-logo.png">
   </div>
 

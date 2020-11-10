@@ -3,6 +3,7 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache">
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -156,7 +157,7 @@ function toggleMobileMenu() {
 }
   </script>
   <script>
-    
+
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -193,7 +194,7 @@ function toggleMobileMenu() {
         logo: "",
         errors:[],
         isLoading: true
-      },   
+      },
 
       created() {
         this.fetchInfo();
@@ -230,7 +231,7 @@ function toggleMobileMenu() {
           } else {
             logoSource = "http://asb.infobasket.ru/Widget/GetTeamLogo/"+teamId  ;
           }
-          
+
           return logoSource;
         },
 
@@ -297,15 +298,15 @@ Vue.use(loader);
         .then(response => { this.matches = response.data;
           axios
             .get('https://asb.infobasket.ru/Widget/CalendarCarousel/43541?&max=100&format=json')
-            .then(responseNew => { 
-              let matchesNew = responseNew.data; 
-              this.matches = this.matches.concat(matchesNew);  
-              this.isLoading = false; 
+            .then(responseNew => {
+              let matchesNew = responseNew.data;
+              this.matches = this.matches.concat(matchesNew);
+              this.isLoading = false;
               this.matches.sort((a, b) => a.GameDateInt - b.GameDateInt);
               this.bearsMatches = this.matches.filter(bears => bears.TeamAid === 100142 || bears.TeamBid === 100142 || bears.TeamAid === 6232 || bears.TeamBid === 6232);
               console.log(this.bearsMatches);
             })
-          
+
         })
         .catch(e => { this.error.push(e) })
 
@@ -349,9 +350,9 @@ Vue.use(loader);
               }
 
             }
- 
-          } 
-          
+
+          }
+
         },
 
         FakeScroll(){
@@ -462,25 +463,25 @@ Vue.use(loader);
       el: '#media',
       data: {
         photos:[
-          [ 
+          [
             { url: "./app/Photo/media1.jpg" },
             { url: "./app/Photo/media2.jpg" },
             { url: "./app/Photo/media3.jpg" },
             { url: "./app/Photo/media4.jpg" },
           ],
-          [ 
+          [
             { url: "./app/Photo/media5.jpg" },
             { url: "./app/Photo/media6.jpg" },
             { url: "./app/Photo/media7.jpg" },
             { url: "./app/Photo/media8.jpg" },
           ],
-          [ 
+          [
             { url: "./app/Photo/media9.jpg" },
             { url: "./app/Photo/media10.jpg" },
             { url: "./app/Photo/media11.jpg" },
             { url: "./app/Photo/media12.jpg" },
           ],
-          [ 
+          [
             { url: "./app/Photo/media13.jpg" },
             { url: "./app/Photo/media14.jpg" },
             { url: "./app/Photo/media15.jpg" },
@@ -511,7 +512,7 @@ Vue.use(loader);
         },
 
         loadMorePhotos(){
-          
+
           if(this.photos.length <= this.currentBlocks){
             return;
           }
